@@ -21,6 +21,10 @@
 	<!-- Material Design Lite CSS -->
 	<link rel="stylesheet" href="{{asset('admins/assets/plugins/material/material.min.css')}}">
 	<link rel="stylesheet" href="{{asset('admins/assets/css/material_style.css')}}">
+
+    <!-- data tables -->
+	<link href="{{asset('admins/assets/plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.css')}}" rel="stylesheet"
+    type="text/css" />
 	<!-- animation -->
 	<link href="{{asset('admins/assets/css/pages/animate_page.css')}}" rel="stylesheet">
 	<!-- Template Styles -->
@@ -654,29 +658,30 @@
 		</div>
 		<!-- end footer -->
 	</div>
-	<!-- start js include path -->
-	<script src="{{asset('admins/assets/plugins/jquery/jquery.min.js')}}"></script>
-	<script src="{{asset('admins/assets/plugins/popper/popper.min.js')}}"></script>
-	<script src="{{asset('admins/assets/plugins/jquery-blockui/jquery.blockui.min.js')}}"></script>
-	<script src="{{asset('admins/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
-	<!-- bootstrap -->
-	<script src="{{asset('admins/assets/plugins/bootstrap/js/bootstrap.min.js')}}"></script>
-	<script src="{{asset('admins/assets/plugins/sparkline/jquery.sparkline.min.js')}}"></script>
-	<script src="{{asset('admins/assets/js/pages/sparkline/sparkline-data.js')}}"></script>
-	<!-- Common js-->
-	<script src="{{asset('admins/assets/js/app.js')}}"></script>
-	<script src="{{asset('admins/assets/js/layout.js')}}"></script>
-	<script src="{{asset('admins/assets/js/theme-color.js')}}"></script>
-	<!-- material -->
-	<script src="{{asset('admins/assets/plugins/material/material.min.js')}}"></script>
-	<!-- animation -->
-	<script src="{{asset('admins/assets/js/pages/ui/animations.js')}}"></script>
-	<!-- morris chart -->
-	<script src="{{asset('admins/assets/plugins/morris/morris.min.js')}}"></script>
-	<script src="{{asset('admins/assets/plugins/morris/raphael-min.js')}}"></script>
-	<script src="{{asset('admins/assets/js/pages/chart/morris/morris_home_data.js')}}"></script>
-	<!-- end js include path -->
+<!-- start js include path -->
+<script src="{{asset('admins/assets/plugins/jquery/jquery.min.js')}}"></script>
+<script src="{{asset('admins/assets/plugins/popper/popper.min.js')}}"></script>
+<script src="{{asset('admins/assets/plugins/jquery-blockui/jquery.blockui.min.js')}}"></script>
+<script src="{{asset('admins/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
+<!-- bootstrap -->
+<script src="{{asset('admins/assets/plugins/bootstrap/js/bootstrap.min.js')}}"></script>
+<!-- Common js-->
+<script src="{{asset('admins/assets/js/app.js')}}"></script>
+<script src="{{asset('admins/assets/js/layout.js')}}"></script>
+<script src="{{asset('admins/assets/js/theme-color.js')}}"></script>
+<!-- data tables -->
+<script src="{{asset('admins/assets/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('admins/assets/plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.js')}}"></script>
+<script src="{{asset('admins/assets/js/pages/table/table_data.js')}}"></script>
+<!-- Material -->
+<script src="{{asset('admins/assets/plugins/material/material.min.js')}}"></script>
+<!-- animation -->
+<script src="{{asset('admins/assets/js/pages/ui/animations.js')}}"></script>
+<!-- end js include path -->
 </body>
 
 
 </html>
+
+
+
