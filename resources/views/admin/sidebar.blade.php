@@ -210,18 +210,13 @@
                     </a>
                     <ul class="sub-menu">
                         <li class="nav-item">
-                            <a href="add_vehicle.html" class="nav-link ">
+                            <a href="{{route('admin.edit.about')}}" class="nav-link ">
                                 <span class="title">About Us</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="all_vehicles.html" class="nav-link ">
+                            <a href="{{route('admin.edit.welcome')}}" class="nav-link ">
                                 <span class="title">Welcome Note</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="edit_vehicle.html" class="nav-link ">
-                                <span class="title">Copyright</span>
                             </a>
                         </li>
                     </ul>
@@ -236,17 +231,17 @@
                     </a>
                     <ul class="sub-menu">
                         <li class="nav-item">
-                            <a href="add_vehicle.html" class="nav-link ">
+                            <a href="{{route('admin.edit.setting')}}" class="nav-link ">
                                 <span class="title">Site Settings</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="all_vehicles.html" class="nav-link ">
+                            <a href="{{route('admin.edit.logo')}}" class="nav-link ">
                                 <span class="title">Logo & Icons</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="edit_vehicle.html" class="nav-link ">
+                            <a href="{{route('admin.edit.credential')}}" class="nav-link ">
                                 <span class="title">Site Credentials</span>
                             </a>
                         </li>
@@ -254,7 +249,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{route('logout')}}" class="nav-link">
                         <i class="fa fa-power-off"></i>
                         <span class="title">Logout</span>
                     </a>
