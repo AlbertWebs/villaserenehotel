@@ -130,6 +130,26 @@
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link nav-toggle">
+                        <i class="material-icons">collections</i>
+                        <span class="title">Images</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item">
+                            <a href="{{ route('admin.new.file') }}" class="nav-link ">
+                                <span class="title">Add Image</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.view.file') }}" class="nav-link ">
+                                <span class="title">View All Files</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link nav-toggle">
                         <i class="material-icons">group</i>
                         <span class="title">Staff</span>
                         <span class="arrow"></span>

@@ -9,6 +9,7 @@ use App\Http\Controllers\SettingController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\PrivacyController;
 use App\Http\Controllers\TermController;
+use App\Http\Controllers\FileController;
 use App\Http\Controllers\Auth\LoginController;
 
 
@@ -70,5 +71,11 @@ Route::group(['prefix'=>'admin'], function(){
     Route::post('update-privacy', [AboutController::class, 'update'])->name('admin.update.privacy')->middleware('is_admin');
     Route::get('edit-privacy', [AboutController::class, 'edit'])->name('admin.edit.privacy')->middleware('is_admin');
 
+    Route::get('new-file', [FileController::class, 'create'])->name('admin.new.file')->middleware('is_admin');
+    Route::post('store-file', [FileController::class, 'store'])->name('admin.store.file')->middleware('is_admin');
+    Route::post('update-file', [FileController::class, 'update'])->name('admin.update.file')->middleware('is_admin');
+    Route::get('view-file', [FileController::class, 'index'])->name('admin.view.file')->middleware('is_admin');
+    Route::get('delete-file/{id}', [FileController::class, 'destroy'])->name('admin.delete.file')->middleware('is_admin');
+    Route::get('edit-file/{id}', [FileController::class, 'edit'])->name('admin.edit.file')->middleware('is_admin');
 });
 
