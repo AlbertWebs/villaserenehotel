@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreAboutRequest;
 use App\Http\Requests\UpdateAboutRequest;
 use App\Models\About;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 class AboutController extends Controller
 {
@@ -58,7 +60,29 @@ class AboutController extends Controller
      */
     public function edit(About $about)
     {
-        //
+        $About = About::find('1');
+        return view('admin.about.edit', compact('About'));
+    }
+
+    public function edit_welcome(About $about)
+    {
+        $About = About::find('1');
+        return view('admin.about.edit-intro', compact('About'));
+    }
+    public function edit_copyright(About $about)
+    {
+        $About = About::find('1');
+        return view('admin.about.edit-copyright', compact('About'));
+    }
+    public function edit_term(About $about)
+    {
+        $About = About::find('1');
+        return view('admin.about.edit-term', compact('About'));
+    }
+    public function edit_privacy(About $about)
+    {
+        $About = About::find('1');
+        return view('admin.about.edit-privacy', compact('About'));
     }
 
     /**
@@ -68,9 +92,11 @@ class AboutController extends Controller
      * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateAboutRequest $request, About $about)
+    public function update(Request $request)
     {
-        //
+        $data = $request->except(['_token']);
+        About::where('id','1')->update($data);
+        return back();
     }
 
     /**

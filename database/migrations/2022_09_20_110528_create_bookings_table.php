@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('depart');
             $table->string('persons');
             $table->string('room_type');
-
+            $table->text('comment');
             $table->timestamps();
         });
     }

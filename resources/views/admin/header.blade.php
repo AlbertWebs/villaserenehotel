@@ -2,7 +2,7 @@
     <div class="page-header-inner ">
         <!-- logo start -->
         <div class="page-logo">
-            <a href="index.html">
+            <a href="{{url('/')}}/admin">
                 <img alt="" src="{{asset('admins/assets/img/logo.png')}}">
                 <span class="logo-default">Villa</span> </a>
         </div>

@@ -15,6 +15,14 @@ return new class extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
+            $table->string('sitename')->nullable();
+            $table->string('url')->nullable();
+            $table->string('address')->nullable();
+            $table->string('mobile_one')->nullable();
+            $table->string('mobile_two')->nullable();
+            $table->string('email_one')->nullable();
+            $table->string('email_two')->nullable();
+            $table->text('map')->nullable();
             $table->timestamps();
         });
     }

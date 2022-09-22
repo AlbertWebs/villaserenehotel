@@ -6,7 +6,11 @@ use App\Http\Controllers\BookingController;
 use App\Http\Controllers\CredentialController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\SettingController;
+use App\Http\Controllers\RoomController;
+use App\Http\Controllers\PrivacyController;
+use App\Http\Controllers\TermController;
 use App\Http\Controllers\Auth\LoginController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -26,22 +30,24 @@ Route::get('/', function () {
 Auth::routes();
 Route::get('/logout', [LoginController::class, 'logout'])->middleware('is_admin');
 
-Route::get('admin/', [AdminController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
+
 
 Route::group(['prefix'=>'admin'], function(){
+    Route::get('/', [AdminController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
+
     Route::get('new-booking', [BookingController::class, 'create'])->name('admin.new.booking')->middleware('is_admin');
     Route::post('store-booking', [BookingController::class, 'store'])->name('admin.store.booking')->middleware('is_admin');
-    Route::post('update-booking', [BookingController::class, 'update'])->name('admin.update.booking')->middleware('is_admin');
+    Route::post('update-booking/{id}', [BookingController::class, 'update'])->name('admin.update.booking')->middleware('is_admin');
     Route::get('view-booking', [BookingController::class, 'index'])->name('admin.view.booking')->middleware('is_admin');
     Route::get('delete-booking/{id}', [BookingController::class, 'destroy'])->name('admin.delete.booking')->middleware('is_admin');
     Route::get('edit-booking/{id}', [BookingController::class, 'edit'])->name('admin.edit.booking')->middleware('is_admin');
 
-    Route::get('new-room', [BookingController::class, 'create'])->name('admin.new.room')->middleware('is_admin');
-    Route::post('store-room', [BookingController::class, 'store'])->name('admin.store.room')->middleware('is_admin');
-    Route::post('update-room', [BookingController::class, 'update'])->name('admin.update.room')->middleware('is_admin');
-    Route::get('view-room', [BookingController::class, 'index'])->name('admin.view.room')->middleware('is_admin');
-    Route::get('delete-room/{id}', [BookingController::class, 'destroy'])->name('admin.delete.room')->middleware('is_admin');
-    Route::get('edit-room/{id}', [BookingController::class, 'edit'])->name('admin.edit.room')->middleware('is_admin');
+    Route::get('new-room', [RoomController::class, 'create'])->name('admin.new.room')->middleware('is_admin');
+    Route::post('store-room', [RoomController::class, 'store'])->name('admin.store.room')->middleware('is_admin');
+    Route::post('update-room', [RoomController::class, 'update'])->name('admin.update.room')->middleware('is_admin');
+    Route::get('view-room', [RoomController::class, 'index'])->name('admin.view.room')->middleware('is_admin');
+    Route::get('delete-room/{id}', [RoomController::class, 'destroy'])->name('admin.delete.room')->middleware('is_admin');
+    Route::get('edit-room/{id}', [RoomController::class, 'edit'])->name('admin.edit.room')->middleware('is_admin');
 
     Route::post('update-setting', [SettingController::class, 'update'])->name('admin.update.setting')->middleware('is_admin');
     Route::get('edit-setting', [SettingController::class, 'edit'])->name('admin.edit.setting')->middleware('is_admin');
@@ -53,8 +59,16 @@ Route::group(['prefix'=>'admin'], function(){
 
     Route::post('update-about', [AboutController::class, 'update'])->name('admin.update.about')->middleware('is_admin');
     Route::get('edit-about', [AboutController::class, 'edit'])->name('admin.edit.about')->middleware('is_admin');
-    Route::get('edit-welcome', [AboutController::class, 'edit'])->name('admin.edit.welcome')->middleware('is_admin');
+    Route::get('edit-welcome', [AboutController::class, 'edit_welcome'])->name('admin.edit.welcome')->middleware('is_admin');
+    Route::get('edit-copyright', [AboutController::class, 'edit_copyright'])->name('admin.edit.copyright')->middleware('is_admin');
 
+    Route::get('view-term', [AboutController::class, 'edit_term'])->name('admin.view.term')->middleware('is_admin');
+    Route::post('update-term', [AboutController::class, 'update'])->name('admin.update.term')->middleware('is_admin');
+    Route::get('edit-term', [AboutController::class, 'edit'])->name('admin.edit.term')->middleware('is_admin');
+
+    Route::get('view-privacy', [AboutController::class, 'edit_privacy'])->name('admin.view.privacy')->middleware('is_admin');
+    Route::post('update-privacy', [AboutController::class, 'update'])->name('admin.update.privacy')->middleware('is_admin');
+    Route::get('edit-privacy', [AboutController::class, 'edit'])->name('admin.edit.privacy')->middleware('is_admin');
 
 });
 

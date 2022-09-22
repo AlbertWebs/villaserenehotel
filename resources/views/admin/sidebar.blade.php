@@ -185,17 +185,17 @@
                     </a>
                     <ul class="sub-menu">
                         <li class="nav-item">
-                            <a href="add_vehicle.html" class="nav-link ">
+                            <a href="{{route('admin.view.privacy')}}" class="nav-link ">
                                 <span class="title">Privacy Policy</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="all_vehicles.html" class="nav-link ">
+                            <a href="{{route('admin.view.term')}}" class="nav-link ">
                                 <span class="title">Terms and Conditions</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="edit_vehicle.html" class="nav-link ">
+                            <a href="{{route('admin.edit.copyright')}}" class="nav-link ">
                                 <span class="title">Copyright</span>
                             </a>
                         </li>

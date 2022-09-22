@@ -6,15 +6,15 @@
         <div class="page-bar">
             <div class="page-title-breadcrumb">
                 <div class=" pull-left">
-                    <div class="page-title">All Bookings</div>
+                    <div class="page-title">All Rooms</div>
                 </div>
                 <ol class="breadcrumb page-breadcrumb pull-right">
                     <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
                             href="{{route('admin.home')}}">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
                     </li>
-                    <li><a class="parent-item" href="#">Booking</a>&nbsp;<i class="fa fa-angle-right"></i>
+                    <li><a class="parent-item" href="#">Room</a>&nbsp;<i class="fa fa-angle-right"></i>
                     </li>
-                    <li class="active">All Bookings</li>
+                    <li class="active">All Rooms</li>
                 </ol>
             </div>
         </div>
@@ -22,7 +22,7 @@
             <div class="col-md-12">
                 <div class="card card-box">
                     <div class="card-head">
-                        <header>All Bookings</header>
+                        <header>All Rooms</header>
                         <div class="tools">
                             <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
                             <a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
@@ -33,7 +33,7 @@
                         <div class="row p-b-20">
                             <div class="col-md-6 col-sm-6 col-6">
                                 <div class="btn-group">
-                                    <a href="{{route('admin.new.booking')}}" id="addRow" class="btn btn-info">
+                                    <a href="{{route('admin.new.room')}}" id="addRow" class="btn btn-info">
                                         Add New <i class="fa fa-plus"></i>
                                     </a>
                                 </div>
@@ -45,38 +45,38 @@
                                 <thead>
                                     <tr>
                                         <th class="center"></th>
-                                        <th class="center"> Name </th>
-                                        <th class="center"> Mobile </th>
-                                        <th class="center"> Email </th>
-                                        <th class="center"> Arrive </th>
-                                        <th class="center"> Depart </th>
-                                        <th class="center"> Room Type </th>
-                                        <th class="center"> Payment </th>
+                                        <th class="center"> Room Number </th>
+                                        <th class="center"> Type </th>
+                                        <th class="center"> Meal </th>
+                                        <th class="center"> Cancellation Charges </th>
+                                        <th class="center"> Bed Capacity </th>
+                                        <th class="center"> Price </th>
+                                        <th class="center"> Availability </th>
                                         <th class="center"> Action </th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($Bookings as $Booking)
+                                    @foreach ($Rooms as $Room)
                                     <tr class="odd gradeX">
                                         <td class="user-circle-img">
                                             <img src="{{asset('admins/image/istockphoto-1300845620-612x612.png')}}" alt="">
                                         </td>
-                                        <td class="center">{{$Booking->name}}</td>
-                                        <td class="center"><a href="tel:{{$Booking->mobile}}">
-                                            {{$Booking->mobile}} </a></td>
-                                        <td class="center"><a href="mailto:{{$Booking->email}} ">
-                                            {{$Booking->email}} </a></td>
-                                        <td class="center">{{date('d'), strtotime($Booking->arrive)}}/{{date('m'), strtotime($Booking->arrive)}}/{{date('Y'), strtotime($Booking->arrive)}}</td>
-                                        <td class="center">{{date('d'), strtotime($Booking->depart)}}/{{date('m'), strtotime($Booking->depart)}}/{{date('Y'), strtotime($Booking->depart)}}</td>
-                                        <td class="center">{{$Booking->room_type}}</td>
+                                        <td class="center">{{$Room->room_number}}</td>
+                                        <td class="center"><a href="tel:{{$Room->room_type}}">
+                                            {{$Room->room_type}} </a></td>
+                                        <td class="center"><a href="mailto:{{$Room->meal}} ">
+                                            {{$Room->meal}} </a></td>
+                                        <td class="center">{{$Room->cancellation_charges}}</td>
+                                        <td class="center">{{$Room->bed_capacity}}</td>
+                                        <td class="center">{{$Room->price}}</td>
                                         <td class="center">
-                                            <span class="label label-sm label-success">Paid </span>
+                                            <span class="label label-sm label-success">Available </span>
                                         </td>
                                         <td class="center">
-                                            <a href="{{route('admin.edit.booking', ['id'=>$Booking->id])}}" class="btn btn-tbl-edit btn-xs">
+                                            <a href="{{route('admin.edit.room', ['id'=>$Room->id])}}" class="btn btn-tbl-edit btn-xs">
                                                 <i class="fa fa-pencil"></i>
                                             </a>
-                                            <a href="{{route('admin.delete.booking', ['id'=>$Booking->id])}}" class="btn btn-tbl-delete btn-xs">
+                                            <a href="{{route('admin.delete.room', ['id'=>$Room->id])}}" class="btn btn-tbl-delete btn-xs">
                                                 <i class="fa fa-trash-o "></i>
                                             </a>
                                         </td>

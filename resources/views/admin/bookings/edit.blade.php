@@ -39,14 +39,14 @@
                                     here</li>
                             </ul> --}}
                         </div>
-                        <form method="post" action="{{route('admin.store.booking')}}">
+                        <form method="post" action="{{route('admin.update.booking', ['id'=>$Booking->id])}}">
                             @csrf
                         <div class="card-body row">
 
                             <div class="col-lg-12 p-t-20">
                                 <div
                                     class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                    <input class="mdl-textfield__input" type="text" id="txtFirstName" name="name">
+                                    <input class="mdl-textfield__input" type="text" id="txtFirstName" name="name" value="{{$Booking->name}}">
                                     <label class="mdl-textfield__label">Full Name</label>
                                 </div>
                             </div>
@@ -54,7 +54,7 @@
                             <div class="col-lg-6 p-t-20">
                                 <div
                                     class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                    <input class="mdl-textfield__input" type="email" id="txtemail" name="email">
+                                    <input class="mdl-textfield__input" type="email" id="txtemail" name="email" value="{{$Booking->email}}">
                                     <label class="mdl-textfield__label">Email</label>
                                     <span class="mdl-textfield__error">Enter Valid Email Address!</span>
                                 </div>
@@ -62,7 +62,7 @@
                             <div class="col-lg-6 p-t-20">
                                 <div
                                     class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width">
-                                    <input class="mdl-textfield__input" type="text" id="sample2" value=""
+                                    <input class="mdl-textfield__input" type="text" id="sample2" value="{{$Booking->gender}}"
                                         readonly tabIndex="-1" name="gender">
                                     <label for="sample2" class="pull-right margin-0">
                                         <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
@@ -79,7 +79,7 @@
                                 <div
                                     class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
                                     <input class="mdl-textfield__input" type="text"
-                                        pattern="-?[0-9]*(\.[0-9]+)?" id="text5" name="mobile">
+                                        pattern="-?[0-9]*(\.[0-9]+)?" id="text5" name="mobile" value="{{$Booking->mobile}}">
                                     <label class="mdl-textfield__label" for="text5">Mobile Number</label>
                                     <span class="mdl-textfield__error">Number required!</span>
                                 </div>
@@ -87,28 +87,28 @@
                             <div class="col-lg-6 p-t-20">
                                 <div
                                     class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                    <input class="mdl-textfield__input" type="text" id="txtCity" name="address">
+                                    <input class="mdl-textfield__input" type="text" id="txtCity" name="address" value="{{$Booking->address}}">
                                     <label class="mdl-textfield__label">Address</label>
                                 </div>
                             </div>
                             <div class="col-lg-6 p-t-20">
                                 <div
                                     class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                    <input class="mdl-textfield__input" type="text" id="date" name="arrive">
+                                    <input class="mdl-textfield__input" type="text" id="date" name="arrive" value="{{$Booking->arrive}}">
                                     <label class="mdl-textfield__label">Arrive</label>
                                 </div>
                             </div>
                             <div class="col-lg-6 p-t-20">
                                 <div
                                     class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                    <input class="mdl-textfield__input" type="text" id="date2" name="depart">
+                                    <input class="mdl-textfield__input" type="text" id="date2" name="depart" value="{{$Booking->depart}}">
                                     <label class="mdl-textfield__label">Depart</label>
                                 </div>
                             </div>
                             <div class="col-lg-6 p-t-20">
                                 <div
                                     class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width">
-                                    <input class="mdl-textfield__input" type="text" id="list2" value="" readonly
+                                    <input class="mdl-textfield__input" type="text" id="list2" value="{{$Booking->persons}}" readonly
                                         tabIndex="-1" name="persons">
                                     <label for="list2" class="pull-right margin-0">
                                         <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
@@ -129,7 +129,7 @@
                             <div class="col-lg-6 p-t-20">
                                 <div
                                     class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width">
-                                    <input class="mdl-textfield__input" type="text" id="list3" value="" readonly
+                                    <input class="mdl-textfield__input" type="text" id="list3" value="{{$Booking->room_type}}" readonly
                                         tabIndex="-1" name="room_type">
                                     <label for="list3" class="pull-right margin-0">
                                         <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
@@ -150,13 +150,13 @@
 
                             <div class="col-lg-12 p-t-20">
                                 <div class="mdl-textfield mdl-js-textfield txt-full-width">
-                                    <textarea class="mdl-textfield__input" rows="4" id="education" name="comment"></textarea>
+                                    <textarea class="mdl-textfield__input" rows="4" id="education" name="comment" value="{{$Booking->name}}">{{$Booking->comment}}</textarea>
                                     <label class="mdl-textfield__label" for="text7">Comment</label>
                                 </div>
                             </div>
                             <div class="col-lg-12 p-t-20 text-center">
                                 <button type="submit"
-                                    class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 m-r-20 btn-pink">Submit</button>
+                                    class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 m-r-20 btn-pink">Save Changes</button>
                                 <button type="button"
                                     class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-default">Cancel</button>
                             </div>

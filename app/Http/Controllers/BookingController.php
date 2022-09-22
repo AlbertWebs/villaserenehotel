@@ -6,6 +6,9 @@ use App\Http\Requests\StoreBookingRequest;
 use App\Http\Requests\UpdateBookingRequest;
 use App\Models\Booking;
 use App\Models\SendEmail;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+// use Input;
 
 class BookingController extends Controller
 {
@@ -37,21 +40,10 @@ class BookingController extends Controller
      * @param  \App\Http\Requests\StoreBookingRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreBookingRequest $request)
+    public function store(Request $request)
     {
-        $Bookings = new Booking;
-        $Bookings->name  = Input::get('name');
-        $Bookings->email  = Input::get('email');
-        $Bookings->gender  = Input::get('gender');
-        $Bookings->mobile  = Input::get('mobile');
-        $Bookings->address  = Input::get('address');
-        $Bookings->arrive  = Input::get('arrive');
-        $Bookings->depart  = Input::get('depart');
-        $Bookings->persons  = Input::get('persons');
-        $Bookings->room_type  = Input::get('room_type');
-        $Bookings->save();
-        // Send Email
-        return Redirect::back();
+        $booking = Booking::create($request->all());
+        return redirect()->route('admin.view.booking')->with('success', 'Room ' . $booking->id . ' created');
     }
 
 
@@ -72,9 +64,10 @@ class BookingController extends Controller
      * @param  \App\Models\Booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function edit(Booking $booking)
+    public function edit($booking)
     {
-        //
+        $Booking = Booking::find($booking);
+        return view('admin.bookings.edit', compact('Booking'));
     }
 
     /**
@@ -84,10 +77,11 @@ class BookingController extends Controller
      * @param  \App\Models\Booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateBookingRequest $request, Booking $booking)
+    public function update(Request $request, $id)
     {
-        $booking->update($request->all());
-        return redirect()->route('admin.booking.index')->with('success', 'Booking ' . $booking->name . ' udpated!');
+        $data = $request->except(['_token']);
+        Booking::where('id',$id)->update($data);
+        return redirect()->route('admin.view.booking');
     }
 
     /**
@@ -96,8 +90,9 @@ class BookingController extends Controller
      * @param  \App\Models\Booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Booking $booking)
+    public function destroy($booking)
     {
-        //
+        Booking::where('id',$booking)->delete();
+        return redirect()->route('admin.view.booking');
     }
 }

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreRoomRequest;
 use App\Http\Requests\UpdateRoomRequest;
 use App\Models\Room;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 class RoomController extends Controller
 {
@@ -15,7 +17,8 @@ class RoomController extends Controller
      */
     public function index()
     {
-        //
+        $Rooms = Room::all();
+        return view('admin.rooms.index', compact('Rooms'));
     }
 
     /**
@@ -25,7 +28,8 @@ class RoomController extends Controller
      */
     public function create()
     {
-        //
+        $Rooms = Room::all();
+        return view('admin.rooms.create', compact('Rooms'));
     }
 
     /**
@@ -34,9 +38,10 @@ class RoomController extends Controller
      * @param  \App\Http\Requests\StoreRoomRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreRoomRequest $request)
+    public function store(Request $request)
     {
-        //
+        $booking = Room::create($request->except(['_token']));
+        return redirect()->route('admin.view.room')->with('success', 'Room ' . $booking->id . ' created');
     }
 
     /**
@@ -47,7 +52,8 @@ class RoomController extends Controller
      */
     public function show(Room $room)
     {
-        //
+        $Booking = Booking::find($booking);
+        return view('admin.bookings.edit', compact('Booking'));
     }
 
     /**
@@ -56,9 +62,10 @@ class RoomController extends Controller
      * @param  \App\Models\Room  $room
      * @return \Illuminate\Http\Response
      */
-    public function edit(Room $room)
+    public function edit($room)
     {
-        //
+        $Room = Room::find($room);
+        return view('admin.rooms.edit', compact('Room'));
     }
 
     /**
@@ -79,8 +86,9 @@ class RoomController extends Controller
      * @param  \App\Models\Room  $room
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Room $room)
+    public function destroy($room)
     {
-        //
+        Room::where('id',$room)->delete();
+        return redirect()->route('admin.view.room');
     }
 }
