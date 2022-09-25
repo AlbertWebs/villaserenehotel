@@ -39,7 +39,7 @@
                                     here</li>
                             </ul> --}}
                         </div>
-                        <form method="post" action="{{route('admin.update.file', ['id'=>$File->id])}}">
+                        <form method="post" action="{{route('admin.update.file', ['id'=>$File->id])}}" enctype="multipart/form-data">
                             @csrf
                         <div class="card-body row">
 
@@ -50,7 +50,7 @@
                             <div class="col-lg-6 p-t-20">
                                 <div
                                     class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width">
-                                    <input class="mdl-textfield__input" type="text" id="sample2" value="Room ID: {{$File->unique}}"
+                                    <input class="mdl-textfield__input" type="text" id="sample2" value="{{$File->unique}}"
                                         readonly tabIndex="-1" name="unique">
                                     <label for="sample2" class="pull-right margin-0">
                                         <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
@@ -70,18 +70,9 @@
                             @else
                             <div class="col-lg-6 p-t-20">
                                 <div
-                                    class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width">
-                                    <input class="mdl-textfield__input" type="text" id="sample2" value="{{$File->gender}}"
-                                        readonly tabIndex="-1" name="gender">
-                                    <label for="sample2" class="pull-right margin-0">
-                                        <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
-                                    </label>
-                                    <label for="sample2" class="mdl-textfield__label">Gender</label>
-                                    <ul data-mdl-for="sample2"
-                                        class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-                                        <li class="mdl-menu__item" data-val="Male">Male</li>
-                                        <li class="mdl-menu__item" data-val="Female">Female</li>
-                                    </ul>
+                                    class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                    <input class="mdl-textfield__input" type="text" id="txtRoomNo" value="{{$File->unique}}" name="unique">
+                                    <label class="mdl-textfield__label">Location</label>
                                 </div>
                             </div>
                             @endif
@@ -124,6 +115,8 @@
                                         src="{{url('/')}}/uploads/images/{{$File->filename}}" alt=""> </a>
                                    </div>
                             </div>
+
+                            <input type="hidden" name="image_cheat" value="{{$File->filename}}">
 
 
 

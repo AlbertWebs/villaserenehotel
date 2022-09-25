@@ -89,14 +89,20 @@ class FileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $image = $request->file('file');
-        $imageName = $image->getClientOriginalName();
-        $image->move(public_path('uploads/images'),$imageName);
+        if($request->hasFile('file')){
+            $image = $request->file('file');
+            $imageName = $image->getClientOriginalName();
+            $image->move(public_path('uploads/images'),$imageName);
+        }else{
+            $imageName  =$request->image_cheat;
+        }
+
+
 
         $update = array(
             'type' => $request->type,
             'unique' => $request->unique,
-            'filename' => $request->imageName,
+            'filename' => $imageName,
         );
         File::where('id',$id)->update($update);
         return back();
