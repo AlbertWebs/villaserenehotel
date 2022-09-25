@@ -41,7 +41,10 @@
                     <div class="card-body row">
                         <div class="col-lg-12 p-t-20">
                             <label class="control-label col-md-3">Upload File Photos</label>
-                            <form id="id_dropzone" class="dropzone">
+                            <form id="id_dropzone" class="dropzone" action="{{route('admin.store.file')}}" enctype="multipart/form-data">
+                                @csrf
+                                <input type="hidden" name="type" value="room">
+                                <input type="hidden" name="unique" value="2">
                                 <div class="dz-message">
                                     <div class="dropIcon">
                                         <i class="material-icons">cloud_upload</i>
@@ -51,7 +54,32 @@
                                         actually uploaded.)
                                     </em>
                                 </div>
+                                <div id="success-msg" class="alert-success text-center"></div>
                             </form>
+                            {{--  --}}
+                            <script type="text/javascript">
+                                    Dropzone.options.dropzone =
+                                    {
+                                        maxFilesize: 12,
+                                        renameFile: function(file) {
+                                            var dt = new Date();
+                                            var time = dt.getTime();
+                                        return time+file.name;
+                                        },
+                                        acceptedFiles: ".jpeg,.jpg,.png,.gif",
+                                        addRemoveLinks: true,
+                                        timeout: 5000,
+                                        success: function(file, response)
+                                        {
+                                            console.log(response);
+                                        },
+                                        error: function(file, response)
+                                        {
+                                        return false;
+                                        }
+                            };
+                            </script>
+                            {{--  --}}
                         </div>
                     </div>
                 </div>

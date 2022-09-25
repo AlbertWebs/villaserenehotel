@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreFileRequest;
 use App\Http\Requests\UpdateFileRequest;
 use App\Models\File;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 class FileController extends Controller
 {
@@ -17,6 +19,12 @@ class FileController extends Controller
     {
         $Files = File::all();
          return view('admin.files.index', compact('Files'));
+    }
+
+
+    public function index_list(){
+        $Files = File::all();
+        return view('admin.files.index-list', compact('Files'));
     }
 
     /**
@@ -35,9 +43,18 @@ class FileController extends Controller
      * @param  \App\Http\Requests\StoreFileRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreFileRequest $request)
+    public function store(Request $request)
     {
-        //
+        $image = $request->file('file');
+        $imageName = $image->getClientOriginalName();
+        $image->move(public_path('uploads/images'),$imageName);
+
+        $imageUpload = new File();
+        $imageUpload->filename = $imageName;
+        $imageUpload->unique = $request->unique;
+        $imageUpload->type = $request->type;
+        $imageUpload->save();
+        return response()->json(['success'=>$imageName]);
     }
 
     /**
@@ -57,9 +74,10 @@ class FileController extends Controller
      * @param  \App\Models\File  $file
      * @return \Illuminate\Http\Response
      */
-    public function edit(File $file)
+    public function edit($file)
     {
-        //
+        $File = File::find($file);
+        return view('admin.files.edit', compact('File'));
     }
 
     /**
@@ -69,9 +87,21 @@ class FileController extends Controller
      * @param  \App\Models\File  $file
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateFileRequest $request, File $file)
+    public function update(Request $request, $id)
     {
-        //
+        $image = $request->file('file');
+        $imageName = $image->getClientOriginalName();
+        $image->move(public_path('uploads/images'),$imageName);
+
+        $update = array(
+            'type' => $request->type,
+            'unique' => $request->unique,
+            'filename' => $request->imageName,
+        );
+        File::where('id',$id)->update($update);
+        return back();
+        // return redirect()->route('admin.view.booking');
+
     }
 
     /**
@@ -80,8 +110,9 @@ class FileController extends Controller
      * @param  \App\Models\File  $file
      * @return \Illuminate\Http\Response
      */
-    public function destroy(File $file)
+    public function destroy($file)
     {
-        //
+        File::where('id',$file)->delete();
+        return redirect()->route('admin.list.file');
     }
 }

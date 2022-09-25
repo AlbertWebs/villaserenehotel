@@ -73,8 +73,9 @@ Route::group(['prefix'=>'admin'], function(){
 
     Route::get('new-file', [FileController::class, 'create'])->name('admin.new.file')->middleware('is_admin');
     Route::post('store-file', [FileController::class, 'store'])->name('admin.store.file')->middleware('is_admin');
-    Route::post('update-file', [FileController::class, 'update'])->name('admin.update.file')->middleware('is_admin');
+    Route::post('update-file/{id}', [FileController::class, 'update'])->name('admin.update.file')->middleware('is_admin');
     Route::get('view-file', [FileController::class, 'index'])->name('admin.view.file')->middleware('is_admin');
+    Route::get('view-file-list', [FileController::class, 'index_list'])->name('admin.list.file')->middleware('is_admin');
     Route::get('delete-file/{id}', [FileController::class, 'destroy'])->name('admin.delete.file')->middleware('is_admin');
     Route::get('edit-file/{id}', [FileController::class, 'edit'])->name('admin.edit.file')->middleware('is_admin');
 });

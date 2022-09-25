@@ -9,6 +9,7 @@
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
 	<meta name="description" content="Responsive Admin Template" />
 	<meta name="author" content="SmartUniversity" />
+    <meta name="_token" content="{{csrf_token()}}" />
 	<title>Villa Serene Hotel | Best Hotel in Kitale</title>
 	<!-- icons -->
 	<link href="{{asset('admins/assets/plugins/simple-line-icons/simple-line-icons.min.css')}}" rel="stylesheet" type="text/css" />

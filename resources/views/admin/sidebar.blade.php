@@ -145,6 +145,11 @@
                                 <span class="title">View All Files</span>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.list.file') }}" class="nav-link ">
+                                <span class="title">Edit Files</span>
+                            </a>
+                        </li>
 
                     </ul>
                 </li>

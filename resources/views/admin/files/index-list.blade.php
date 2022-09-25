@@ -1,4 +1,4 @@
-@extends('admin.master-gallery')
+@extends('admin.master-list')
 
 @section('content')
 <!-- start page content -->
@@ -42,13 +42,46 @@
                     <div class="card-body row">
                         <div id="aniimated-thumbnials" class="list-unstyled row clearfix">
 
-                            @foreach ($Files as $files)
-                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 m-b-20">
-                                <a href="{{url('/')}}/uploads/images/{{$files->filename}}" data-sub-html="Demo Description">
-                                    <img class="img-fluid img-thumbnail" src="{{url('/')}}/uploads/images/{{$files->filename}}" style="height:200px" alt="">
-                                </a>
+
+                            <div class="table-scrollable">
+                                <table class="table table-hover table-checkable order-column full-width" id="example4">
+                                    <thead>
+                                        <tr>
+                                            <th class="center"></th>
+                                            <th class="center"> ID Number </th>
+                                            <th class="center"> Type </th>
+
+                                            <th class="center"> Last Update </th>
+                                            <th class="center"> Action </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($Files as $files)
+                                        <tr class="odd gradeX">
+                                            <td class="user-circle-img">
+                                                <img width="100" height="100" src="{{url('/')}}/uploads/images/{{$files->filename}}" alt="">
+                                            </td>
+                                            <td class="center">{{$files->id}}</td>
+
+                                            <td class="center">{{$files->type}}</td>
+
+                                            <td class="center">
+                                                <span class="label label-sm label-success">{{$files->created_at}} </span>
+                                            </td>
+                                            <td class="center">
+                                                <a href="{{route('admin.edit.file', ['id'=>$files->id])}}" class="btn btn-tbl-edit btn-xs">
+                                                    <i class="fa fa-pencil"></i>
+                                                </a>
+                                                <a href="{{route('admin.delete.file', ['id'=>$files->id])}}" class="btn btn-tbl-delete btn-xs">
+                                                    <i class="fa fa-trash-o "></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
                             </div>
-                            @endforeach
+
 
 
 
@@ -61,8 +94,8 @@
                                         Add More <i class="fa fa-plus"></i>
                                     </a>
                                     &nbsp;
-                                    <a href="{{route('admin.list.file')}}" id="addRow" class="btn btn-success">
-                                        Edit Images <i class="fa fa-edit"></i>
+                                    <a href="{{route('admin.view.file')}}" id="addRow" class="btn btn-success">
+                                        Go to Gallery <i class="fa fa-image"></i>
                                     </a>
                                 </div>
                             </div>
