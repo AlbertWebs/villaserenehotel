@@ -119,7 +119,6 @@
                             <input type="hidden" name="image_cheat" value="{{$File->filename}}">
 
 
-
                             <div class="col-lg-12 p-t-20 text-center">
                                 <button type="submit"
                                     class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 m-r-20 btn-pink">Save Changes</button>
