@@ -27,7 +27,7 @@
             <div class="col-xl-12">
                 <div class="offers__area-title">
                     <span class="subtitle__one">Company Offers</span>
-                    <h2>Book now and save up to 35% On hotel rooms</h2>
+                    <h2>Book now and save up to 15% On hotel rooms</h2>
                     <p>hasellus nisi sapien, rutrum placerat sapien eu, rhoncus tempus felis. Nulla non pulvinar enim, vel viverra nunc. Integer condimentum vulputate justo. Morbi rhoncus elit in tellus viverra, vel fermentum orci dictum. Vestibulum non nisi commodo, tincidunt elit non, consectetur tellus. Fusce in commodo velit. In dapibus dui vitae tortor ullamcorper mollis.</p>
                 </div>
             </div>
@@ -35,7 +35,7 @@
         <div class="row">
             <div class="col-xl-12">
                 <div class="offers__area-image">
-                    <img class="img__full" src="{{asset('theme/assets/img/features/offers.jpg')}}" alt="">
+                    <img class="img__full"  src="{{url('/')}}/uploads/images/hotels/Restaurant-main.jpeg" alt="">
                 </div>
             </div>
         </div>
@@ -53,7 +53,7 @@
                         <img src="{{asset('theme/assets/img/icon/cleaning-1.png')}}" alt="">
                     </div>
                     <div class="services__two-item-content">
-                        <h4>Room Cleaning</h4>
+                        <h4>Clean Rooms</h4>
                         <p>Proin massa augue, lacinia at blandit ac, Fringilla scelerisque tortor. Mauris</p>
                     </div>
                 </div>
@@ -65,7 +65,7 @@
                         <img src="{{asset('theme/assets/img/icon/car-parking.png')}}" alt="">
                     </div>
                     <div class="services__two-item-content">
-                        <h4>Car Parking</h4>
+                        <h4>Free Parking</h4>
                         <p>Proin massa augue, lacinia at blandit ac, Fringilla scelerisque tortor. Mauris</p>
                     </div>
                 </div>
