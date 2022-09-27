@@ -151,7 +151,7 @@
 								<li><a href="{{url('/')}}"><i class="fal fa-angle-double-right"></i>Home</a></li>
 								<li><a href="{{url('/')}}"><i class="fal fa-angle-double-right"></i>Restaurant</a></li>
 								<li><a href="{{url('/')}}"><i class="fal fa-angle-double-right"></i>Rooms</a></li>
-								<li><a href="{{url('/')}}"><i class="fal fa-angle-double-right"></i>Contact Us</a></li>
+								<li><a href="{{url('/')}}/contact-us"><i class="fal fa-angle-double-right"></i>Contact Us</a></li>
 							</ul>
 						</div>
 					</div>

@@ -28,6 +28,7 @@ use App\Http\Controllers\Auth\LoginController;
 
 Route::get('/', [HomeController::class, 'index'])->name('front.home');
 Route::get('/contact-us', [HomeController::class, 'contact'])->name('front.contact');
+Route::get('/about-us', [HomeController::class, 'about'])->name('front.about');
 Route::get('/copyright-statement', [HomeController::class, 'copyright'])->name('front.copyright');
 Route::get('/privacy-policy', [HomeController::class, 'privacy'])->name('front.policy');
 Route::get('/terms-and-conditions', [HomeController::class, 'terms'])->name('front.terms');
