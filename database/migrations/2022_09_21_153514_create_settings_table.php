@@ -23,6 +23,10 @@ return new class extends Migration
             $table->string('email_one')->nullable();
             $table->string('email_two')->nullable();
             $table->text('map')->nullable();
+            $table->text('facebook')->nullable();
+            $table->text('twitter')->nullable();
+            $table->text('linkedin')->nullable();
+            $table->text('instagram')->nullable();
             $table->timestamps();
         });
     }

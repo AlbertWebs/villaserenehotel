@@ -10,6 +10,7 @@ use App\Http\Controllers\RoomController;
 use App\Http\Controllers\PrivacyController;
 use App\Http\Controllers\TermController;
 use App\Http\Controllers\FileController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\LoginController;
 
 
@@ -24,9 +25,12 @@ use App\Http\Controllers\Auth\LoginController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', [HomeController::class, 'index'])->name('front.home');
+Route::get('/contact-us', [HomeController::class, 'contact'])->name('front.contact');
+Route::get('/copyright-statement', [HomeController::class, 'copyright'])->name('front.copyright');
+Route::get('/privacy-policy', [HomeController::class, 'privacy'])->name('front.policy');
+Route::get('/terms-and-conditions', [HomeController::class, 'terms'])->name('front.terms');
 
 Auth::routes();
 Route::get('/logout', [LoginController::class, 'logout'])->middleware('is_admin');

@@ -106,6 +106,38 @@
                                 </div>
                             </div>
 
+                            <div class="col-lg-6 p-t-20">
+                                <div
+                                    class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                    <input class="mdl-textfield__input" type="text" id="txtCity" name="facebook" value="{{$Setting->facebook}}">
+                                    <label class="mdl-textfield__label">Facebook</label>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 p-t-20">
+                                <div
+                                    class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                    <input class="mdl-textfield__input" type="url" id="txtCity" name="twitter" value="{{$Setting->twitter}}">
+                                    <label class="mdl-textfield__label">Twitter</label>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 p-t-20">
+                                <div
+                                    class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                    <input class="mdl-textfield__input" type="text" id="txtCity" name="linkedin" value="{{$Setting->linkedin}}">
+                                    <label class="mdl-textfield__label">Linkedin</label>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 p-t-20">
+                                <div
+                                    class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                    <input class="mdl-textfield__input" type="url" id="txtCity" name="instagram" value="{{$Setting->instagram}}">
+                                    <label class="mdl-textfield__label">instagram</label>
+                                </div>
+                            </div>
+
 
 
 
