@@ -52,18 +52,21 @@
 			<div class="row align-items-center">
 				<div class="col-xl-5 col-lg-6 lg-mb-30">
 					<div class="accommodations__area-title">
-						<span class="subtitle__one">Accommodations</span>
-						<h2>Welcome Our Hotels And Resorts</h2>
-						<p>Savvy travelers are looking for more than just the next destination on the map. They are looking for a memorable experience and to make new friends along the way.</p>
-						<a class="theme-btn" href="about.html">Read More<i class="fal fa-long-arrow-right"></i></a>
+						<span class="subtitle__one">Food & Accommodations</span>
+						<h2>Welcome to Villa Serene Hotel</h2>
+						<p>
+                            Located in light industrial zoning allows for very quiet nights. There are important amenities within 10 miles.
+Our houses offer every convenience and feel just like “home”. This concept sets us apart and places us at the forefront of providing exceptional  lodging services.We would be honored to serve you on your next visit to Villa Serene Hotel.
+                        </p>
+						<a class="theme-btn" href="{{url('/')}}/about-us">Read More<i class="fal fa-long-arrow-right"></i></a>
 					</div>
 				</div>
 				<div class="col-xl-7 col-lg-6">
 					<div class="accommodations__area-right">
 						<div class="accommodations__area-right-image">
-							<img src="{{asset('theme/assets/img/hotel/hotel-1.jpg')}}" alt="">
+							<img style="border-radius:10px; max-height:350px; max-width:530px;" src="{{url('/')}}/uploads/images/badroom.png" alt="">
 							<div class="accommodations__area-right-image-two">
-								<img src="{{asset('theme/assets/img/hotel/hotel-2.jpg')}}" alt="">
+								<img style="border-radius:10px" src="{{url('/')}}/uploads/images/foood.png" alt="">
 							</div>
 						</div>
 					</div>
@@ -97,61 +100,61 @@
 			<div class="row deluxe__area-active">
 				<div class="col-xl-3 col-lg-4 mb-30 suite">
 					<div class="deluxe__area-item">
-						<div class="deluxe__area-item-image">
-							<img class="img__full" src="{{asset('theme/assets/img/luxury/luxury-1.jpg')}}" alt="">
+						<div class="deluxe__area-item-image" style="border-radius:10px;">
+							<img style="border-radius:10px;" class="img__full" src="{{asset('theme/assets/img/luxury/luxury-1.jpg')}}" alt="">
 						</div>
 						<div class="deluxe__area-item-content">
-							<h6><a href="#"><span>$134</span> / Night</a></h6>
+							<h6><a href="#"><span>KES 13400</span> / Night</a></h6>
 							<h4><a href="room-details.html">Small Suite</a></h4>
-							<a class="simple-btn" href="contact.html"><i class="far fa-chevron-right"></i>Booking Now</a>
+							<a class="simple-btn" href="{{url('/')}}/book-room/room-slung"><i class="far fa-chevron-right"></i>Booking Now</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-xl-6 col-lg-8 mb-30 suite">
 					<div class="deluxe__area-item deluxe__area-item-hover">
 						<div class="deluxe__area-item-image">
-							<img class="img__full" src="{{asset('theme/assets/img/luxury/luxury-2.jpg')}}" alt="">
+							<img style="border-radius:10px;" class="img__full" src="{{asset('theme/assets/img/luxury/luxury-2.jpg')}}" alt="">
 						</div>
 						<div class="deluxe__area-item-content">
-							<h6><a href="#"><span>$199</span> / Night</a></h6>
+							<h6><a href="#"><span>KES 19900</span> / Night</a></h6>
 							<h4><a href="room-details.html">Deluxe Room</a></h4>
-							<a class="simple-btn" href="contact.html"><i class="far fa-chevron-right"></i>Booking Now</a>
+							<a class="simple-btn" href="{{url('/')}}/book-room/room-slung"><i class="far fa-chevron-right"></i>Booking Now</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-xl-3 col-lg-4 mb-30 family">
 					<div class="deluxe__area-item">
 						<div class="deluxe__area-item-image">
-							<img class="img__full" src="{{asset('theme/assets/img/luxury/luxury-3.jpg')}}" alt="">
+							<img style="border-radius:10px;" class="img__full" src="{{asset('theme/assets/img/luxury/luxury-3.jpg')}}" alt="">
 						</div>
 						<div class="deluxe__area-item-content">
-							<h6><a href="#"><span>$319</span> / Night</a></h6>
+							<h6><a href="#"><span>KES 31900</span> / Night</a></h6>
 							<h4><a href="room-details.html">Family Room</a></h4>
-							<a class="simple-btn" href="contact.html"><i class="far fa-chevron-right"></i>Booking Now</a>
+							<a class="simple-btn" href="{{url('/')}}/book-room/room-slung"><i class="far fa-chevron-right"></i>Booking Now</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-xl-6 col-lg-8 lg-mb-30 single">
 					<div class="deluxe__area-item">
 						<div class="deluxe__area-item-image">
-							<img class="img__full" src="{{asset('theme/assets/img/luxury/luxury-4.jpg')}}" alt="">
+							<img style="border-radius:10px;" class="img__full" src="{{asset('theme/assets/img/luxury/luxury-4.jpg')}}" alt="">
 						</div>
 						<div class="deluxe__area-item-content">
-							<h6><a href="#"><span>$169</span> / Night</a></h6>
+							<h6><a href="#"><span>KES 16900</span> / Night</a></h6>
 							<h4><a href="room-details.html">Single Room</a></h4>
-							<a class="simple-btn" href="contact.html"><i class="far fa-chevron-right"></i>Booking Now</a>
+							<a class="simple-btn" href="{{url('/')}}/book-room/room-slung"><i class="far fa-chevron-right"></i>Booking Now</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-xl-6 luxury">
-					<div class="deluxe__area-item">
+					<div class="deluxe__area-item" style="border-radius:10px;">
 						<div class="deluxe__area-item-image">
-							<img class="img__full" src="{{asset('theme/assets/img/luxury/luxury-5.jpg')}}" alt="">
+							<img style="border-radius:10px;" class="img__full" src="{{asset('theme/assets/img/luxury/luxury-5.jpg')}}" alt="">
 						</div>
 						<div class="deluxe__area-item-content">
-							<h6><a href="#"><span>$249</span> / Night</a></h6>
+							<h6><a href="#"><span>KES 24900</span> / Night</a></h6>
 							<h4><a href="room-details.html">Luxury Room</a></h4>
-							<a class="simple-btn" href="contact.html"><i class="far fa-chevron-right"></i>Booking Now</a>
+							<a class="simple-btn" href="{{url('/')}}/book-room/room-slung"><i class="far fa-chevron-right"></i>Booking Now</a>
 						</div>
 					</div>
 				</div>
@@ -189,8 +192,10 @@
 							<img src="{{asset('theme/assets/img/icon/cleaning.png')}}" alt="">
 						</div>
 						<div class="services__area-item-content">
-							<h5><a href="#">Room Cleaning</a></h5>
-							<p>Proin massa augue, lacinia at blandit ac, fringilla scelerisque tortor</p>
+							<h5><a href="#">Clean Rooms</a></h5>
+							<p>
+
+                            </p>
 						</div>
 					</div>
 				</div>
@@ -226,16 +231,18 @@
 			<div class="row align-items-center bg-left mb-60">
 				<div class="col-xl-6 col-lg-6">
 					<div class="feature__area-image">
-						<img class="img__full" src="{{asset('theme/assets/img/features/feature-1.jpg')}}" alt="">
+						<img style="border-radius:10px" class="img__full" src="{{url('/')}}/uploads/images/hotels/Restaurant-main.jpeg" alt="">
 					</div>
 				</div>
 				<div class="col-xl-6 col-lg-6">
 					<div class="feature__area-left">
 						<div class="feature__area-left-title">
 							<span class="subtitle__one">Our Food</span>
-							<h2>Restaurant Silo</h2>
-							<p>Proin massa augue, lacinia at blandit ac, fringilla scelerisque tortor. Mauris sit amet lectus porta,</p>
-							<a class="theme-border-btn" href="services-details.html">Read More<i class="fal fa-long-arrow-right"></i></a>
+							<h2>Our Restaurant</h2>
+							<p>
+                                Villa Serene Hotel's signature restaurant, Our meals are designed to indulge your inner gourmand.
+                            </p>
+							<a class="theme-border-btn" href="{{url('/')}}/about-us">Read More<i class="fal fa-long-arrow-right"></i></a>
 						</div>
 					</div>
 				</div>

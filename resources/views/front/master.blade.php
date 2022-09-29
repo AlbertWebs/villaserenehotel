@@ -11,7 +11,7 @@
 	<!-- Title of Site -->
 	<title>Villa Serene Hotel  - Luxury Hotel Booking</title>
 	<!-- Favicons -->
-	<link rel="icon" type="image/png" href="{{asset('theme/assets/img/favicon.png')}}">
+	@include('favicon')
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="{{asset('theme/assets/css/bootstrap.min.css')}}">
 	<!-- Font Awesome CSS -->
@@ -46,7 +46,7 @@
 				<div class="header__area-menubar">
 					<div class="header__area-menubar-left">
 						<div class="header__area-menubar-left-logo">
-							<a href="{{url('/')}}"><img src="{{asset('theme/assets/img/logo.png')}}" alt=""></a>
+							<a href="{{url('/')}}"><img src="{{url('/')}}/uploads/logo/logo.png" alt=""></a>
 							<div class="responsive-menu"></div>
 						</div>
 					</div>
@@ -91,7 +91,7 @@
 					<div class="footer__area-widget">
 						<div class="footer__area-widget-about">
 							<div class="footer__area-widget-about-logo">
-								<a href="{{url('/')}}"><img src="{{asset('theme/assets/img/logo.png')}}" alt=""></a>
+								<a href="{{url('/')}}"><img  src="{{url('/')}}/uploads/logo/logo.png" alt=""></a>
 							</div>
                             <?php $Setting = \App\Models\Setting::find('1'); ?>
 							<p>We have created a unique lodging concept geared to the seasoned business traveler and we are the #1 comfort hotel services in Kitale.</p>

@@ -682,7 +682,7 @@ Video Animation CSS
   --heading-font: 'Bai Jamjuree', sans-serif;
   --white: #FFFFFF;
   --black: #000000;
-  --primary-color: #B89146;
+  --primary-color: #a7a7a7;
   --heading-color: #0E1317;
   --body-color: #333334;
   --color-1: #666667;
@@ -2785,7 +2785,7 @@ Menu Bar
 }
 
 .header__area-menubar-left-logo a img {
-  max-width: 150px;
+  max-width: 180px;
   position: relative;
   z-index: 999;
 }
@@ -5790,7 +5790,7 @@ Footer
 }
 
 .footer__area-widget-about-logo a img {
-  max-width: 150px;
+  max-width: 200px;
 }
 
 .footer__area-widget-about p {
