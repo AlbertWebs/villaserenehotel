@@ -28,7 +28,9 @@
                 <div class="offers__area-title">
                     <span class="subtitle__one">Company Offers</span>
                     <h2>Book now and save up to 15% On hotel rooms</h2>
-                    <p>hasellus nisi sapien, rutrum placerat sapien eu, rhoncus tempus felis. Nulla non pulvinar enim, vel viverra nunc. Integer condimentum vulputate justo. Morbi rhoncus elit in tellus viverra, vel fermentum orci dictum. Vestibulum non nisi commodo, tincidunt elit non, consectetur tellus. Fusce in commodo velit. In dapibus dui vitae tortor ullamcorper mollis.</p>
+                    <p>
+                        Located in light industrial zoning allows for very quiet nights. There are important amenities within 10 miles. Our houses offer every convenience and feel just like “home”. This concept sets us apart and places us at the forefront of providing exceptional lodging services.We would be honored to serve you on your next visit to Villa Serene Hotel.
+                    </p>
                 </div>
             </div>
         </div>
@@ -54,7 +56,7 @@
                     </div>
                     <div class="services__two-item-content">
                         <h4>Clean Rooms</h4>
-                        <p>Proin massa augue, lacinia at blandit ac, Fringilla scelerisque tortor. Mauris</p>
+                        <p>Villa Serene Hotel Ensures all rooms are cleaned and well Disinfected</p>
                     </div>
                 </div>
             </div>
@@ -66,7 +68,8 @@
                     </div>
                     <div class="services__two-item-content">
                         <h4>Free Parking</h4>
-                        <p>Proin massa augue, lacinia at blandit ac, Fringilla scelerisque tortor. Mauris</p>
+                        <p>Self-parking is available at Villa Serene Hotel
+                            Over-sized parking is available upon request.</p>
                     </div>
                 </div>
             </div>
@@ -74,11 +77,11 @@
                 <div class="services__two-item">
                     <span>03</span>
                     <div class="services__two-item-icon">
-                        <img src="{{asset('theme/assets/img/icon/swimming-pool.png')}}" alt="">
+                        <img src="{{asset('theme/assets/img/icon/list-7.png')}}" alt="">
                     </div>
                     <div class="services__two-item-content">
-                        <h4>Swimming pool</h4>
-                        <p>Proin massa augue, lacinia at blandit ac, Fringilla scelerisque tortor. Mauris</p>
+                        <h4>WiFi</h4>
+                        <p>Enjoy High Speed Internet at the Comfort of Your Room or Restaurant</p>
                     </div>
                 </div>
             </div>
@@ -90,7 +93,7 @@
                     </div>
                     <div class="services__two-item-content">
                         <h4>PickUp & Drop</h4>
-                        <p>Proin massa augue, lacinia at blandit ac, Fringilla scelerisque tortor. Mauris</p>
+                        <p>We Organise PickUp and Drop Services for our visitors upon request</p>
                     </div>
                 </div>
             </div>
@@ -99,100 +102,57 @@
 </div>
 <!-- Services Two End -->
 <!-- Gallery Area Start -->
-<div class="gallery__area section-padding pb-0 overflow-hidden">
+{{-- <div class="gallery__area section-padding pb-0 overflow-hidden">
     <div class="container-fluid p-0">
         <div class="row">
+            @foreach($File as $files)
             <div class="col-sm-3 sm-mb-10">
                 <div class="gallery__area-item">
-                    <a class="img-popup" href="{{asset('theme/assets/img/features/gallery-1.jpg')}}"><img class="img__full" src="{{asset('theme/assets/img/features/gallery-1.jpg')}}" alt=""></a>
+                    <a class="img-popup" href="{{url('/')}}/uploads/images/{{$files->filename}}"><img class="img__full room-image-rooms" src="{{url('/')}}/uploads/images/{{$files->filename}}" alt=""></a>
                 </div>
             </div>
-            <div class="col-sm-3 sm-mb-10">
-                <div class="gallery__area-item">
-                    <a class="img-popup" href="{{asset('theme/assets/img/features/gallery-2.jpg')}}"><img class="img__full" src="{{asset('theme/assets/img/features/gallery-2.jpg')}}" alt=""></a>
-                </div>
-            </div>
-            <div class="col-sm-3 sm-mb-10">
-                <div class="gallery__area-item">
-                    <a class="img-popup" href="{{asset('theme/assets/img/features/gallery-3.jpg')}}"><img class="img__full" src="{{asset('theme/assets/img/features/gallery-3.jpg')}}" alt=""></a>
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="gallery__area-item">
-                    <a class="img-popup" href="{{asset('theme/assets/img/features/gallery-4.jpg')}}"><img class="img__full" src="{{asset('theme/assets/img/features/gallery-4.jpg')}}" alt=""></a>
-                </div>
-            </div>
+            @endforeach
+
         </div>
     </div>
-</div>
+</div> --}}
 <!-- Gallery Area End -->
 <!-- Modern Room Area Start -->
 <div class="modern__room section-padding">
     <div class="container">
         <div class="row">
-            <div class="col-xl-4 col-lg-6 col-md-6 mb-30">
+            @foreach ($Rooms as $rooms)
+            <?php
+                $File = App\Models\File::where('unique',$rooms->id)->first();
+            ?>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 md-mb-30" style="margin-bottom:20px">
                 <div class="deluxe__three-item">
                     <div class="deluxe__three-item-image">
-                        <img src="{{asset('theme/assets/img/hotel/hotel-10.jpg')}}" alt="">
-                        <div class="deluxe__three-item-image-content">
-                            <h4><a href="room-details.html">Double Room</a><span>$219/Night</span></h4>
-                            <p>Praesent non ullamcorper ligula. Proin a mi vitae massa lacinia</p>
+                        <img style="border-radius:10px; border:5px solid #a7a7a7;" class="room-image-rooms" src="{{url('/')}}/uploads/images/{{$File->filename}}" alt="">
+                        <div class="deluxe__three-item-image-content" style="border-radius:10px; display:">
+                            <h4><a href="{{url('/')}}/bookings/{{$rooms->slug}}">{{$rooms->room_type}}</a><span>KES {{$rooms->price}}/Night</span></h4>
+                            <p>{{$rooms->comment}} </p>
                             <div class="deluxe__three-item-image-content-meta">
                                 <ul>
-                                    <li><i class="fal fa-bed-alt"></i>(3) bed's</li>
-                                    <li><i class="fal fa-users"></i>(4) Guest's</li>
+                                    <li><i class="fal fa-bed-alt"></i>({{$rooms->bed_capacity}}) bed's</li>
+                                    <li><i class="fal fa-users"></i>({{$rooms->bed_capacity}}) Guest's</li>
                                 </ul>
                             </div>
                             <div class="deluxe__three-item-image-content-bottom">
-                                <a class="simple-btn" href="#"><i class="far fa-chevron-right"></i>Read More</a>
-                                <p><i class="fas fa-star"></i><span>4.8</span>2k</p>
+                                <a class="simple-btn" href="{{url('/')}}/bookings/{{$rooms->slug}}"><i class="far fa-chevron-right"></i>Book Now</a>
+                                @if($rooms->status == "1")
+                                <p><span style="font-weight: 900" class="text-success"><i class="fas fa-check text-success"></i> Available</span> <i class="fas fa-star text-warning"></i><span>{{$rooms->ratings_value}}</span>{{$rooms->ratings}}</p>
+                                @else
+                                <p><span style="font-weight: 900" class="text-danger"><i class="fas fa-frown text-danger"></i> Booked</span> <i class="fas fa-star text-warning"></i><span>{{$rooms->ratings_value}}</span>{{$rooms->ratings}}</p>
+                                @endif
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-xl-4 col-lg-6 col-md-6 md-mb-30">
-                <div class="deluxe__three-item">
-                    <div class="deluxe__three-item-image">
-                        <img src="{{asset('theme/assets/img/hotel/hotel-11.jpg')}}" alt="">
-                        <div class="deluxe__three-item-image-content">
-                            <h4><a href="room-details.html">Small Suite</a><span>$188/Night</span></h4>
-                            <p>Praesent non ullamcorper ligula. Proin a mi vitae massa lacinia</p>
-                            <div class="deluxe__three-item-image-content-meta">
-                                <ul>
-                                    <li><i class="fal fa-bed-alt"></i>(2) bed's</li>
-                                    <li><i class="fal fa-users"></i>(3) Guest's</li>
-                                </ul>
-                            </div>
-                            <div class="deluxe__three-item-image-content-bottom">
-                                <a class="simple-btn" href="#"><i class="far fa-chevron-right"></i>Read More</a>
-                                <p><i class="fas fa-star"></i><span>4.4</span>2k</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-6 col-md-6 md-mb-30">
-                <div class="deluxe__three-item">
-                    <div class="deluxe__three-item-image">
-                        <img src="{{asset('theme/assets/img/hotel/hotel-12.jpg')}}" alt="">
-                        <div class="deluxe__three-item-image-content">
-                            <h4><a href="room-details.html">Luxury room</a><span>$229/Night</span></h4>
-                            <p>Praesent non ullamcorper ligula. Proin a mi vitae massa lacinia</p>
-                            <div class="deluxe__three-item-image-content-meta">
-                                <ul>
-                                    <li><i class="fal fa-bed-alt"></i>(3) bed's</li>
-                                    <li><i class="fal fa-users"></i>(6) Guest's</li>
-                                </ul>
-                            </div>
-                            <div class="deluxe__three-item-image-content-bottom">
-                                <a class="simple-btn" href="#"><i class="far fa-chevron-right"></i>Read More</a>
-                                <p><i class="fas fa-star"></i><span>3.7</span>2k</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
+
         </div>
     </div>
 </div>

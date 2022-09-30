@@ -30,7 +30,9 @@ class HomeController extends Controller
 
     public function about()
     {
-        return view('front.about');
+        $File  = \App\Models\File::where('id')->limit('4');
+        $Rooms = \App\Models\Room::where('status','1')->limit('3')->get();
+        return view('front.about', compact('Rooms','File'));
     }
 
     public function bookings()

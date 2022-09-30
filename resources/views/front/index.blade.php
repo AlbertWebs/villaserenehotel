@@ -2,12 +2,12 @@
 
 @section('content')
 	<!-- Banner Area Start -->
-	<div class="banner__area" data-background="{{asset('theme/assets/img/banner-1.jpg')}}">
+	<div class="banner__area" data-background="{{asset('theme/assets/img/bg-3.jpg')}}">
 		<div class="container">
 			<div class="row">
 				<div class="col-xl-12">
 					<div class="banner__area-title">
-						<h1>Karibu Kitale<span>Home Away From Home</span></h1>
+						<h1>Karibu Kitale<span>Villa Serene Hotel</span></h1>
                         {{-- <h1>Best Hotel in Kitale<span>Home Away From Home</span></h1> --}}
 						<div class="banner__area-title-video">
 							<div class="video__play">
@@ -21,7 +21,7 @@
 				<form action="#">
 					<div class="check__area">
 						<div class="check__area-item">
-							<p>Check In<input id="date" type="date" style="border:2px solid #ffffff"></p>
+							<p>Check In<input id="date" type="date"></p>
 						</div>
 						<div class="check__area-item">
 							<p>Check Out<input id="date2" type="date"></p>
