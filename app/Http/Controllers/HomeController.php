@@ -38,7 +38,11 @@ class HomeController extends Controller
         $Rooms = \App\Models\Room::all();
         return view('front.rooms', compact('Rooms'));
     }
-
+    public function booking($slung)
+    {
+        $Rooms = \App\Models\Room::where('slug',$slung)->get();
+        return view('front.room', compact('Rooms'));
+    }
 
     public function contact()
     {
