@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('status');
             $table->string('ratings');
             $table->string('ratings_value');
+            $table->string('slug');
             $table->string('room_number');
             $table->string('room_type');
             $table->string('meal')->nullable();

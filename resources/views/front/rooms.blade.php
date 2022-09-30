@@ -36,8 +36,8 @@
                 <div class="deluxe__three-item">
                     <div class="deluxe__three-item-image">
                         <img style="border-radius:10px; border:5px solid #a7a7a7; min-height:200px" src="{{url('/')}}/uploads/images/{{$File->filename}}" alt="">
-                        <div class="deluxe__three-item-image-content" style="border-radius:10px">
-                            <h4><a href="room-details.html">{{$rooms->room_type}}</a><span>KES {{$rooms->price}}/Night</span></h4>
+                        <div class="deluxe__three-item-image-content" style="border-radius:10px; display:">
+                            <h4><a href="{{url('/')}}/bookings/{{$rooms->slug}}">{{$rooms->room_type}}</a><span>KES {{$rooms->price}}/Night</span></h4>
                             <p>{{$rooms->comment}} </p>
                             <div class="deluxe__three-item-image-content-meta">
                                 <ul>
@@ -46,7 +46,7 @@
                                 </ul>
                             </div>
                             <div class="deluxe__three-item-image-content-bottom">
-                                <a class="simple-btn" href="#"><i class="far fa-chevron-right"></i>Book Now</a>
+                                <a class="simple-btn" href="{{url('/')}}/bookings/{{$rooms->slug}}"><i class="far fa-chevron-right"></i>Book Now</a>
                                 @if($rooms->status == "1")
                                 <p><span style="font-weight: 900" class="text-success"><i class="fas fa-check text-success"></i> Available</span> <i class="fas fa-star text-warning"></i><span>{{$rooms->ratings_value}}</span>{{$rooms->ratings}}</p>
                                 @else

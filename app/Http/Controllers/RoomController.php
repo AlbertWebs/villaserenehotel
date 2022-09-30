@@ -40,6 +40,11 @@ class RoomController extends Controller
      */
     public function store(Request $request)
     {
+        $room_type = $request->room_type;
+        $room_number = $request->room_number;
+        $combine = $room_type . ' ' . $room_number;
+        $slug = \Str::slug($combine);
+        $request->request->add(['slug' => $slug]);
         $booking = Room::create($request->except(['_token']));
         return redirect()->route('admin.view.room')->with('success', 'Room ' . $booking->id . ' created');
     }
@@ -77,6 +82,11 @@ class RoomController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $room_type = $request->room_type;
+        $room_number = $request->room_number;
+        $combine = $room_type . ' ' . $room_number;
+        $slug = \Str::slug($combine);
+        $request->request->add(['slug' => $slug]);
         $data = $request->except(['_token']);
         Room::where('id',$id)->update($data);
         return back();
