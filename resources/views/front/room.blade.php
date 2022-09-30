@@ -80,18 +80,29 @@
                 <div class="col-xl-9 col-lg-8">
                     <div class="room__details-right">
                         <div class="room__details-right-content">
-                            <h3 class="mb-25">Luxury Room is the best online room for luxury hotels</h3>
+                            <h3 class="mb-25">{{$rooms->room_type}} Room - {{$rooms->comment}}</h3>
                             <p class="mb-25">Praesent non ullamcorper ligula. Proin a mi vitae massa lacinia sollicitudin eget eu ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque consectetur rhoncus lobortis. Curabitur sit amet velit sagittis, pellentesque diam euismod, faucibus quam. Cras non rhoncus ipsum. Quisque mattis arcu metus, a fermentum justo semper in. Aliquam egestas metus at nunc aliquam</p>
                             <p class="m-0">id molestie ex ornare. Aliquam id arcu vel sem pretium porttitor non maximus diam. Quisque urna turpis, euismod sed elementum vel, pellentesque eu eros. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus musc.</p>
-                            <div class="row mt-35 mb-35">
+                            <div class="row mb-35">
                                 <?php
                                     $File = App\Models\File::where('unique',$rooms->id)->get();
                                 ?>
-                                @foreach ($File as $files)
-                                <div class="col-sm-6 sm-mb-30">
-                                    <img class="img__full" src="{{url('/')}}/uploads/images/{{$files->filename}}" alt="">
+
+                                <!-- Gallery Area Start -->
+                                <div class="gallery__area section-padding pb-0 overflow-hidden">
+                                    <div class="container-fluid p-0">
+                                        <div class="row">
+                                            @foreach ($File as $files)
+                                            <div class="col-lg-3 col-sm-12 sm-mb-10" style="margin-bottom:10px;">
+                                                <div class="gallery__area-item">
+                                                    <a class="img-popup" href="{{url('/')}}/uploads/images/{{$files->filename}}"><img style="border-radius:10px; border:5px solid #a7a7a7;" class="img__full room-image" src="{{url('/')}}/uploads/images/{{$files->filename}}" alt=""></a>
+                                                </div>
+                                            </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
                                 </div>
-                                @endforeach
+                                <!-- Gallery Area End -->
 
                             </div>
                             <h3 class="mb-25">Special check-in instructions</h3>
@@ -107,7 +118,7 @@
                                             <img src="{{asset('theme/assets/img/icon/list-1.png')}}" alt="">
                                         </div>
                                         <div class="room__details-right-list-item-title">
-                                            <h6>Room Cleanig</h6>
+                                            <h6>Room Cleaning</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -158,36 +169,78 @@
                             <div class="room__details-right-faq-item">
                                 <div class="room__details-right-faq-item-card">
                                     <div class="room__details-right-faq-item-card-header">
-                                        <h5>Do you pay before or after booking a hotel?</h5>
+                                        <h5>
+                                            Do I pay when I book or when I leave my hotel?
+                                        </h5>
                                         <i class="far fa-long-arrow-up"></i>
                                     </div>
                                     <div class="room__details-right-faq-item-card-header-content active">
-                                        <p>Praesent non ullamcorper ligula. Proin a mi vitae massa lacinia sollicitudin eget eu ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque consectetur rhoncus lobortis. Curabitur sit amet velit sagittis, pellentesque diam euismod, faucibus quam. Cras non rhoncus ipsum. Quisque mattis arcu metus, a fermentum justo semper in.</p>
+                                        <p>
+                                            Most of your bookings will be pay when you leave. Exceptions to this, special offers etc, may require you to pay when you book. This will be made clear to you during booking process.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
                             <div class="room__details-right-faq-item">
                                 <div class="room__details-right-faq-item-card">
                                     <div class="room__details-right-faq-item-card-header">
-                                        <h5>What documents are needed for hotel booking?</h5>
+                                        <h5>I have made a booking where is my confirmation email?</h5>
                                         <i class="far fa-long-arrow-down"></i>
                                     </div>
                                     <div class="room__details-right-faq-item-card-header-content display-none">
-                                        <p>Praesent non ullamcorper ligula. Proin a mi vitae massa lacinia sollicitudin eget eu ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque consectetur rhoncus lobortis. Curabitur sit amet velit sagittis, pellentesque diam euismod, faucibus quam. Cras non rhoncus ipsum. Quisque mattis arcu metus, a fermentum justo semper in.</p>
+                                        <p>
+                                            We strive to make sure our system is as infallible as is possible but, sometimes we do have a few technical problems. If you have not got your confirmation then telephone us on +254796050620 and we will get it manually resent to you A.S.A.P.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
                             <div class="room__details-right-faq-item">
                                 <div class="room__details-right-faq-item-card">
                                     <div class="room__details-right-faq-item-card-header">
-                                        <h5>Do hotels charge your card before you check in?</h5>
+                                        <h5>Where is the hotel / B&B located, and how do I get there?</h5>
                                         <i class="far fa-long-arrow-down"></i>
                                     </div>
                                     <div class="room__details-right-faq-item-card-header-content display-none">
-                                        <p>Praesent non ullamcorper ligula. Proin a mi vitae massa lacinia sollicitudin eget eu ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque consectetur rhoncus lobortis. Curabitur sit amet velit sagittis, pellentesque diam euismod, faucibus quam. Cras non rhoncus ipsum. Quisque mattis arcu metus, a fermentum justo semper in.</p>
+                                        <p>
+                                            The confirmation email sent following a booking provides the hotels full address, directions, telephone number and transport information. this is as provided to us by the establishments themselves. If they don't know how to get there no one will.
+                                            <br>
+                                            Also, our hotel brochure pages have a map link on them. This will give you a map of the local street layout, which you can print out. Our aim is to make it as easy as possible for you to get there once you have booked.
+                                            <br>
+                                            Lastly, We are on google and you can find us on this <a href="https://goo.gl/maps/JcFdrJwRJmRRLXxy7"><strong>Map to Villa Serene Hotel</strong></a>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
+                            {{--  --}}
+                            <div class="room__details-right-faq-item">
+                                <div class="room__details-right-faq-item-card">
+                                    <div class="room__details-right-faq-item-card-header">
+                                        <h5>What is provided in the price? Is breakfast included?</h5>
+                                        <i class="far fa-long-arrow-down"></i>
+                                    </div>
+                                    <div class="room__details-right-faq-item-card-header-content display-none">
+                                        <p>
+                                            The individual hotel pages that you view give definitive details regarding the facilities, services and what is included in your booking price. This is stipulated on an individual hotel by hotel and room by room basis. There should also be confirmation of this on the booking pages as you go through our system. If it does not say breakfast included then it will be charged for separately by the hotel.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            {{--  --}}
+                            {{--  --}}
+                            <div class="room__details-right-faq-item">
+                                <div class="room__details-right-faq-item-card">
+                                    <div class="room__details-right-faq-item-card-header">
+                                        <h5>How do I cancel my booking?</h5>
+                                        <i class="far fa-long-arrow-down"></i>
+                                    </div>
+                                    <div class="room__details-right-faq-item-card-header-content display-none">
+                                        <p>
+                                            The confirmation email sent following a booking of accommodation provides details for cancellation. There is a link that allows you to cancel your booking.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            {{--  --}}
                         </div>
                     </div>
                 </div>

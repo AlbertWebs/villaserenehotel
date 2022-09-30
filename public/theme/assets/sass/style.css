@@ -8019,3 +8019,25 @@ Contact
 
 }
 /*# sourceMappingURL=style.css.map */
+
+.room-image{
+    width:100%;
+    height:256px;
+}
+
+@media (max-width: 768px) {
+    .room-image{
+      height:auto;
+    }
+}
+
+.room-image-rooms{
+    width:100%;
+    height:474px;
+}
+
+@media (max-width: 768px) {
+    .room-image-rooms{
+      height:auto;
+    }
+}

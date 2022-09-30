@@ -4,7 +4,7 @@
 		$(this).css("background-image", "url(" + $(this).attr("data-background") + ")")
 	});
 	/*========== Nice Select ==========*/
-	$('select').niceSelect();	
+	$('select').niceSelect();
 	/*==========  Search  ==========*/
 	$('.header__area-menubar-right-box-search-icon.open').on('click', function() {
 		$('.header__area-menubar-right-box-search-box').fadeIn().addClass('active');
@@ -46,7 +46,7 @@
 		} else {
 			$(".header__sticky").addClass("header__sticky-sticky-menu");
 		}
-	});	
+	});
 /*==========  Toggle menu  ==========*/
 $('.toggle-menu ul').hide();
 $(".toggle-menu a").click(function() {
@@ -69,7 +69,7 @@ $(window).on('load', function() {
 		$(this).siblings('.active').removeClass('active');
 		$(this).addClass('active');
 	});
-});	
+});
 	/*========== Deluxe Active Hover  ==========*/
 	$(".deluxe__area-item").hover(function() {
 		$(".deluxe__area-item").removeClass("deluxe__area-item-hover");
@@ -107,7 +107,7 @@ $(window).on('load', function() {
 			el: ".pagination",
 			clickable: true,
 		},
-	});	
+	});
 	/*==========  Brand  ==========*/
 	var swiper = new Swiper(".band__slider", {
 		loop: true,
@@ -142,7 +142,7 @@ $(window).on('load', function() {
 			$(this).next(".room__details-right-faq-item-card-header-content").addClass("active").slideDown()
 			$(this).children("i").removeClass("far fa-long-arrow-down").addClass("far fa-long-arrow-up")
 		}
-	});		
+	});
 	/*==========  theme loader  ==========*/
 	$(window).on("load", function() {
 		$(".theme-loader").fadeOut(500);

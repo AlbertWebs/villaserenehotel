@@ -7,10 +7,11 @@
 			<div class="row">
 				<div class="col-xl-12">
 					<div class="banner__area-title">
-						<h1>Best Hotel in Kitale<span>Home Away From Home</span></h1>
+						<h1>Karibu Kitale<span>Home Away From Home</span></h1>
+                        {{-- <h1>Best Hotel in Kitale<span>Home Away From Home</span></h1> --}}
 						<div class="banner__area-title-video">
 							<div class="video__play">
-								<a class="video-popup" href="https://www.youtube.com/watch?v=0WC-tD-njcA"><i class="fas fa-play"></i></a>
+								<a class="video-popup" href="https://www.youtube.com/watch?v=2DRHznazSLI"><i class="fas fa-play"></i></a>
 							</div>
 						</div>
 					</div>
@@ -20,7 +21,7 @@
 				<form action="#">
 					<div class="check__area">
 						<div class="check__area-item">
-							<p>Check In<input id="date" type="date"></p>
+							<p>Check In<input id="date" type="date" style="border:2px solid #ffffff"></p>
 						</div>
 						<div class="check__area-item">
 							<p>Check Out<input id="date2" type="date"></p>
@@ -29,11 +30,8 @@
 							<div class="check__area-item-room">
 								<p>Room</p>
 								<select name="select">
-									<option value="1">1 Room</option>
-									<option value="2">2 Room</option>
-									<option value="3">3 Room</option>
-									<option value="4">4 Room</option>
-									<option value="5">5 Room</option>
+									<option value="single">Single</option>
+									<option value="double">Double</option>
 								</select>
 							</div>
 						</div>
@@ -81,8 +79,8 @@ Our houses offer every convenience and feel just like “home”. This concept s
 			<div class="row align-items-end mb-60">
 				<div class="col-xl-5">
 					<div class="deluxe__area-title">
-						<span class="subtitle__one">Deluxe and Luxury</span>
-						<h2>Our Luxury Rooms</h2>
+						<span class="subtitle__one">Single & Double</span>
+						<h2>Our Rooms</h2>
 					</div>
 				</div>
 				<div class="col-xl-7">
@@ -163,18 +161,18 @@ Our houses offer every convenience and feel just like “home”. This concept s
 	</div>
 	<!-- Deluxe Area End -->
 	<!-- Video Area Start -->
-	<div class="video__area" data-background="{{asset('theme/assets/img/video.jpg')}}">
+	<div class="video__area" data-background="{{asset('theme/assets/img/Restaurant-main.jpeg')}}">
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-xxl-6 col-xl-7 col-lg-8">
 					<div class="video__area-title">
-						<h2>Book hotel rooms, get deals & book flights online.</h2>
+						<h2>Book hotel Rooms, Free WiFI , Free Parking & Amazing Meals.</h2>
 					</div>
 				</div>
 				<div class="col-xxl-6 col-xl-5 col-lg-4">
 					<div class="video__area-right">
 						<div class="video__play">
-							<a class="video-popup" href="https://www.youtube.com/watch?v=0WC-tD-njcA"><i class="fas fa-play"></i></a>
+							<a class="video-popup" href="https://www.youtube.com/watch?v=2DRHznazSLI"><i class="fas fa-play"></i></a>
 						</div>
 					</div>
 				</div>
@@ -194,7 +192,7 @@ Our houses offer every convenience and feel just like “home”. This concept s
 						<div class="services__area-item-content">
 							<h5><a href="#">Clean Rooms</a></h5>
 							<p>
-
+                                 Villa Serene Hotel Ensures all rooms are cleaned and well Disinfected
                             </p>
 						</div>
 					</div>
@@ -206,7 +204,9 @@ Our houses offer every convenience and feel just like “home”. This concept s
 						</div>
 						<div class="services__area-item-content">
 							<h5><a href="#">Room Wifi</a></h5>
-							<p>Proin massa augue, lacinia at blandit ac, fringilla scelerisque tortor</p>
+							<p>
+                                Enjoy High Speed Internet at the Comfort of Your Room or Restaurant
+                            </p>
 						</div>
 					</div>
 				</div>
@@ -217,7 +217,7 @@ Our houses offer every convenience and feel just like “home”. This concept s
 						</div>
 						<div class="services__area-item-content">
 							<h5><a href="#">Pickup & Drop</a></h5>
-							<p>Proin massa augue, lacinia at blandit ac, fringilla scelerisque tortor</p>
+							<p>We Organise PickUp and Drop Services for our visitors upon request</p>
 						</div>
 					</div>
 				</div>
@@ -240,9 +240,9 @@ Our houses offer every convenience and feel just like “home”. This concept s
 							<span class="subtitle__one">Our Food</span>
 							<h2>Our Restaurant</h2>
 							<p>
-                                Villa Serene Hotel's signature restaurant, Our meals are designed to indulge your inner gourmand.
+                                Experience the pleasure of fine dining at Villa Serene Restaurant. The restaurant serves all day meals with a spread of diverse African cuisine. Villa Serene is operational 24/7 with all three major meals. Apart from excellent and comforting and family friendly setup, the restaurant boasts of a beautiful surrounding where you can cherish the scene of mother nature making it the finest luxury lodgins in Kitale.
                             </p>
-							<a class="theme-border-btn" href="{{url('/')}}/about-us">Read More<i class="fal fa-long-arrow-right"></i></a>
+							<a class="theme-border-btn" href="{{url('/')}}/about-us">Learn More<i class="fal fa-long-arrow-right"></i></a>
 						</div>
 					</div>
 				</div>
@@ -253,8 +253,12 @@ Our houses offer every convenience and feel just like “home”. This concept s
 						<div class="feature__area-left-title">
 							<span class="subtitle__one">Worried about Security? WE GOT YOU!</span>
 							<h2>Free Parking Space</h2>
-							<p>Proin massa augue, lacinia at blandit ac, fringilla scelerisque tortor. Mauris sit amet lectus porta,</p>
-							<a class="theme-border-btn" href="services-details.html">Read More<i class="fal fa-long-arrow-right"></i></a>
+							<p>
+                                Our Villa is located at a secured/fenced compound ensuring that all vehicles parked within the compound is safe during the stay period.
+                                Self-parking is available at Villa Serene Hotel<br>
+                                Over-sized parking is available upon request.
+                            </p>
+							<a class="theme-border-btn" href="{{url('/')}}/bookings">Explore<i class="fal fa-long-arrow-right"></i></a>
 						</div>
 					</div>
 				</div>
@@ -267,46 +271,37 @@ Our houses offer every convenience and feel just like “home”. This concept s
 			<div class="row align-items-center bg-left mb-60">
 				<div class="col-xl-6 col-lg-6">
 					<div class="feature__area-image">
-						<img class="img__full" src="{{asset('theme/assets/img/features/feature-3.jpg')}}" alt="">
+						<img style="border-radius:10px" class="img__full" src="{{url('/')}}/uploads/images/268155528.jpg" alt="">
 					</div>
 				</div>
 				<div class="col-xl-6 col-lg-6">
 					<div class="feature__area-left">
 						<div class="feature__area-left-title">
-							<span class="subtitle__one">Fitness Equipment</span>
-							<h2>Exercise equipment</h2>
-							<p>Proin massa augue, lacinia at blandit ac, fringilla scelerisque tortor. Mauris sit amet lectus porta,</p>
-							<a class="theme-border-btn" href="services-details.html">Read More<i class="fal fa-long-arrow-right"></i></a>
+							<span class="subtitle__one">Accommodations</span>
+							<h2>Our Rooms</h2>
+							<p>
+                                Unwind in the magic of our rooms, from waking up to the sound of nature, to enjoy the peace and serenity of Our Villa. All our rooms are self contained well spaced and are equipped with basic facilities.
+                                <br><br>
+                                For those yearning to experience unmatched sophistication, book one of our best hotel rooms in Kitale and let us take care of the rest.
+                            </p>
+                            <p>
+
+                            </p>
+							<a class="theme-border-btn" href="{{url('/')}}/bookings">Book Now<i class="fal fa-long-arrow-right"></i></a>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="row align-items-center bg-right">
-				<div class="col-xl-6 col-lg-6 order-last order-lg-first">
-					<div class="feature__area-left">
-						<div class="feature__area-left-title">
-							<span class="subtitle__one">Experiences</span>
-							<h2>Swimming Pool</h2>
-							<p>Proin massa augue, lacinia at blandit ac, fringilla scelerisque tortor. Mauris sit amet lectus porta,</p>
-							<a class="theme-border-btn" href="services-details.html">Read More<i class="fal fa-long-arrow-right"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-6 col-lg-6">
-					<div class="feature__area-image">
-						<img class="img__full" src="{{asset('theme/assets/img/features/feature-4.jpg')}}" alt="">
-					</div>
-				</div>
-			</div>
+
 		</div>
 	</div>
 	<!-- Feature Area End -->
 	<!-- Testimonial Area Start -->
 	<div class="testimonial__area section-padding pb-0">
-		<div class="container">
-			<div class="row">
-				<div class="col-xl-12">
-				   <div class="testimonial__area-bg">
+		<div class="container" style="border-radius:10px">
+			<div class="row" >
+				<div class="col-xl-12" >
+				   <div class="testimonial__area-bg" style="border-radius:10px !important;">
 					<div class="swiper testimonial__slider">
 						<div class="swiper-wrapper">
 							<div class="swiper-slide">
