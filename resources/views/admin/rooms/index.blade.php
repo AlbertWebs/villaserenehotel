@@ -70,7 +70,11 @@
                                         <td class="center">{{$Room->bed_capacity}}</td>
                                         <td class="center">{{$Room->price}}</td>
                                         <td class="center">
+                                            @if($Room->status == "1")
                                             <span class="label label-sm label-success">Available </span>
+                                            @else
+                                            <span class="label label-sm label-danger">Booked! </span>
+                                            @endif
                                         </td>
                                         <td class="center">
                                             <a href="{{route('admin.edit.room', ['id'=>$Room->id])}}" class="btn btn-tbl-edit btn-xs">

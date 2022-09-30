@@ -33,6 +33,13 @@ class HomeController extends Controller
         return view('front.about');
     }
 
+    public function bookings()
+    {
+        $Rooms = \App\Models\Room::all();
+        return view('front.rooms', compact('Rooms'));
+    }
+
+
     public function contact()
     {
         $Setting = Setting::find('1');

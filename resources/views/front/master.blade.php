@@ -63,7 +63,7 @@
                                 <li><a href="#">Restaurant</a>
 
 								</li>
-                                <li><a href="#">Rooms</a>
+                                <li><a href="{{url('/')}}/bookings">Rooms</a>
 
 								</li>
 

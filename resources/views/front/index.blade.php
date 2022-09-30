@@ -251,8 +251,8 @@ Our houses offer every convenience and feel just like “home”. This concept s
 				<div class="col-xl-6 col-lg-6  order-last order-lg-first">
 					<div class="feature__area-left">
 						<div class="feature__area-left-title">
-							<span class="subtitle__one">Read Our Books</span>
-							<h2>The Library</h2>
+							<span class="subtitle__one">Worried about Security? WE GOT YOU!</span>
+							<h2>Free Parking Space</h2>
 							<p>Proin massa augue, lacinia at blandit ac, fringilla scelerisque tortor. Mauris sit amet lectus porta,</p>
 							<a class="theme-border-btn" href="services-details.html">Read More<i class="fal fa-long-arrow-right"></i></a>
 						</div>
@@ -260,7 +260,7 @@ Our houses offer every convenience and feel just like “home”. This concept s
 				</div>
 				<div class="col-xl-6 col-lg-6">
 					<div class="feature__area-image">
-						<img class="img__full" src="{{asset('theme/assets/img/features/feature-2.jpg')}}" alt="">
+						<img style="border-radius:10px" class="img__full" src="{{url('/')}}/uploads/images/parking.jpg" alt="">
 					</div>
 				</div>
 			</div>
@@ -312,36 +312,36 @@ Our houses offer every convenience and feel just like “home”. This concept s
 							<div class="swiper-slide">
 								<div class="testimonial__area-item">
 									<div class="testimonial__area-item-image">
-										<img class="img__full" src="{{asset('theme/assets/img/avatar/testimonial-1.jpg')}}" alt="">
+										<img class="img__full" src="{{url('/')}}/uploads/images/avatar.png" alt="">
 									</div>
 									<div class="testimonial__area-item-content">
-										<h4>David Beckham</h4>
-										<span>UX Designer</span>
-										<p>Proin massa augue, lacinia at blandit ac, fringilla scelerisque tortor. Mauris sit amet lectus porta, porta lectus non, malesuada neque. Integer in tempus leo. Quisque vitae leo ac ex suscipit iaculis eu in nisl. Donec vestibulum volutpat lectus, vel aliquet massa porttitor in. Integer eleifend</p>
+										<h4>Joanne Yego</h4>
+										<span>Customer</span>
+										<p>The customer service is commendable, starting from reception, room service, restaurant with sweet fresh food which is served generously. I would recommend anyone to stay here during your trips around Kitale town</p>
 									</div>
 								</div>
 							</div>
 							<div class="swiper-slide">
 								<div class="testimonial__area-item">
 									<div class="testimonial__area-item-image">
-										<img class="img__full" src="{{asset('theme/assets/img/avatar/testimonial-2.jpg')}}" alt="">
+										<img class="img__full" src="{{url('/')}}/uploads/images/avatar.png" alt="">
 									</div>
 									<div class="testimonial__area-item-content">
-										<h4>David Fincher</h4>
-										<span>UX Designer</span>
-										<p>Proin massa augue, lacinia at blandit ac, fringilla scelerisque tortor. Mauris sit amet lectus porta, porta lectus non, malesuada neque. Integer in tempus leo. Quisque vitae leo ac ex suscipit iaculis eu in nisl. Donec vestibulum volutpat lectus, vel aliquet massa porttitor in. Integer eleifend</p>
+										<h4>GORDON OCHIENG</h4>
+										<span>Customer</span>
+										<p>Just as the name goes,,a very serene place to be ,very quiet,lovely food and really well presented people to host you.The rooms are outstanding and very clean too</p>
 									</div>
 								</div>
 							</div>
 							<div class="swiper-slide">
 								<div class="testimonial__area-item">
 									<div class="testimonial__area-item-image">
-										<img class="img__full" src="{{asset('theme/assets/img/avatar/testimonial-3.jpg')}}" alt="">
+										<img class="img__full" src="{{url('/')}}/uploads/images/avatar.png" alt="">
 									</div>
 									<div class="testimonial__area-item-content">
-										<h4>Ridley Scott</h4>
-										<span>UX Designer</span>
-										<p>Proin massa augue, lacinia at blandit ac, fringilla scelerisque tortor. Mauris sit amet lectus porta, porta lectus non, malesuada neque. Integer in tempus leo. Quisque vitae leo ac ex suscipit iaculis eu in nisl. Donec vestibulum volutpat lectus, vel aliquet massa porttitor in. Integer eleifend</p>
+										<h4>Joan Chebet</h4>
+										<span>Customer</span>
+										<p>The rooms are very nice and clean but what actually stood out was the services, they offer really good services and they are very polite, the food is also nice 🥰 loved everything</p>
 									</div>
 								</div>
 							</div>

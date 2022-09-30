@@ -46,54 +46,36 @@
 
 
                             @if($File->type == "room")
-                            <?php $Room = \App\Models\Room::find($File->unique); ?>
+                            {{-- <?php $Room = \App\Models\Room::find($File->unique); ?> --}}
+
                             <div class="col-lg-6 p-t-20">
-                                <div
-                                    class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width">
-                                    <input class="mdl-textfield__input" type="text" id="sample2" value="{{$File->unique}}"
-                                        readonly tabIndex="-1" name="unique">
-                                    <label for="sample2" class="pull-right margin-0">
-                                        <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
-                                    </label>
-                                    <label for="sample2" class="mdl-textfield__label">Room Number: {{$Room->room_number}}</label>
-                                    <ul data-mdl-for="sample2"
-                                        class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-                                        <?php $Rooms = \App\Models\Room::all(); ?>
+                                <select class="form-control" id="selitemIcon" name="unique">
+                                    <?php $Rooms = \App\Models\Room::all(); ?>
                                         @foreach ($Rooms as $item)
-                                        <li class="mdl-menu__item" data-val="{{$item->id}}">Room Number: {{$item->room_number}}</li>
+                                            <option value="{{$item->id}}"><strong>Type: </strong>{{$item->room_type}} <strong>Detail: </strong> {{$item->comment}} <strong>Room Number: </strong> {{$item->room_number}}</option>
                                         @endforeach
-
-
-                                    </ul>
-                                </div>
+                                </select>
                             </div>
                             @else
                             <div class="col-lg-6 p-t-20">
-                                <div
-                                    class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
                                     <input class="mdl-textfield__input" type="text" id="txtRoomNo" value="{{$File->unique}}" name="unique">
                                     <label class="mdl-textfield__label">Location</label>
                                 </div>
                             </div>
                             @endif
                             <div class="col-lg-6 p-t-20">
-                                <div
-                                    class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width">
-                                    <input class="mdl-textfield__input" type="text" id="list3" value="{{$File->type}}" name="type" readonly
-                                        tabIndex="-1">
-                                    <label for="list3" class="pull-right margin-0">
-                                        <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
-                                    </label>
-                                    <label for="list3" class="mdl-textfield__label">Type</label>
-                                    <ul data-mdl-for="list3" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-                                        <li class="mdl-menu__item" data-val="1">room</li>
-                                        <li class="mdl-menu__item" data-val="2">banner</li>
-                                        <li class="mdl-menu__item" data-val="3">background</li>
-                                        <li class="mdl-menu__item" data-val="4">Slider</li>
 
-                                    </ul>
-                                </div>
+                                <select class="form-control" id="selitemIcon" name="type">
+                                    <option value="{{$File->type}}" selected>{{$File->type}}</option>
+                                    <option value="room">room</option>
+                                    <option value="banner">banner</option>
+                                    <option value="background">background</option>
+                                    <option value="Slider">Slider</option>
+                                </select>
                             </div>
+
+                        <hr>
 
                             <div class="col-lg-6 p-t-20">
                                 <div class="input-group">

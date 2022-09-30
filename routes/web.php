@@ -28,6 +28,7 @@ use App\Http\Controllers\Auth\LoginController;
 
 Route::get('/', [HomeController::class, 'index'])->name('front.home');
 Route::get('/contact-us', [HomeController::class, 'contact'])->name('front.contact');
+Route::get('/bookings', [HomeController::class, 'bookings'])->name('front.bookings');
 Route::get('/about-us', [HomeController::class, 'about'])->name('front.about');
 Route::get('/copyright-statement', [HomeController::class, 'copyright'])->name('front.copyright');
 Route::get('/privacy-policy', [HomeController::class, 'privacy'])->name('front.policy');
@@ -50,7 +51,7 @@ Route::group(['prefix'=>'admin'], function(){
 
     Route::get('new-room', [RoomController::class, 'create'])->name('admin.new.room')->middleware('is_admin');
     Route::post('store-room', [RoomController::class, 'store'])->name('admin.store.room')->middleware('is_admin');
-    Route::post('update-room', [RoomController::class, 'update'])->name('admin.update.room')->middleware('is_admin');
+    Route::post('update-room/{id}', [RoomController::class, 'update'])->name('admin.update.room')->middleware('is_admin');
     Route::get('view-room', [RoomController::class, 'index'])->name('admin.view.room')->middleware('is_admin');
     Route::get('delete-room/{id}', [RoomController::class, 'destroy'])->name('admin.delete.room')->middleware('is_admin');
     Route::get('edit-room/{id}', [RoomController::class, 'edit'])->name('admin.edit.room')->middleware('is_admin');

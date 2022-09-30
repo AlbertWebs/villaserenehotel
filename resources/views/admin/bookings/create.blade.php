@@ -29,15 +29,17 @@
                                 data-upgraded=",MaterialButton">
                                 <i class="material-icons">more_vert</i>
                             </button>
-                            {{-- <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
-                                data-mdl-for="panel-button">
-                                <li class="mdl-menu__item"><i class="material-icons">assistant_photo</i>Action
-                                </li>
-                                <li class="mdl-menu__item"><i class="material-icons">print</i>Another action
-                                </li>
-                                <li class="mdl-menu__item"><i class="material-icons">favorite</i>Something else
-                                    here</li>
-                            </ul> --}}
+                            {{--
+                                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                                    data-mdl-for="panel-button">
+                                    <li class="mdl-menu__item"><i class="material-icons">assistant_photo</i>Action
+                                    </li>
+                                    <li class="mdl-menu__item"><i class="material-icons">print</i>Another action
+                                    </li>
+                                    <li class="mdl-menu__item"><i class="material-icons">favorite</i>Something else
+                                        here</li>
+                                </ul>
+                            --}}
                         </div>
                         <form method="post" action="{{route('admin.store.booking')}}">
                             @csrf
@@ -136,13 +138,10 @@
                                     </label>
                                     <label for="list3" class="mdl-textfield__label">Room Type</label>
                                     <ul data-mdl-for="list3" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-                                        <li class="mdl-menu__item" data-val="1">Single</li>
-                                        <li class="mdl-menu__item" data-val="2">Double</li>
-                                        <li class="mdl-menu__item" data-val="3">Quad</li>
-                                        <li class="mdl-menu__item" data-val="4">King</li>
-                                        <li class="mdl-menu__item" data-val="5">Suite</li>
-                                        <li class="mdl-menu__item" data-val="6">Apartments</li>
-                                        <li class="mdl-menu__item" data-val="7">Villa</li>
+                                        <?php $Room = \App\Models\Room::all(); ?>
+                                        @foreach ($Room as $room)
+                                           <li class="mdl-menu__item" data-val="{{$room->id}}"><strong>Type: </strong>{{$room->room_type}} <strong>Detail: </strong> {{$room->comment}} <strong>Room Number: </strong> {{$room->room_number}}</li>
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div>

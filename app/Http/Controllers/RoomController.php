@@ -75,9 +75,11 @@ class RoomController extends Controller
      * @param  \App\Models\Room  $room
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateRoomRequest $request, Room $room)
+    public function update(Request $request, $id)
     {
-        //
+        $data = $request->except(['_token']);
+        Room::where('id',$id)->update($data);
+        return back();
     }
 
     /**
