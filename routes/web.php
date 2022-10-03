@@ -11,6 +11,7 @@ use App\Http\Controllers\PrivacyController;
 use App\Http\Controllers\TermController;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PaymentsController;
 use App\Http\Controllers\Auth\LoginController;
 
 
@@ -30,10 +31,19 @@ Route::get('/', [HomeController::class, 'index'])->name('front.home');
 Route::get('/contact-us', [HomeController::class, 'contact'])->name('front.contact');
 Route::get('/bookings', [HomeController::class, 'bookings'])->name('front.bookings');
 Route::get('/bookings/{slung}', [HomeController::class, 'booking'])->name('front.booking');
+
+
+
+
+
 Route::get('/about-us', [HomeController::class, 'about'])->name('front.about');
 Route::get('/copyright-statement', [HomeController::class, 'copyright'])->name('front.copyright');
 Route::get('/privacy-policy', [HomeController::class, 'privacy'])->name('front.policy');
 Route::get('/terms-and-conditions', [HomeController::class, 'terms'])->name('front.terms');
+
+Route::get('/book-now', [PaymentsController::class, 'payment'])->name('initiate-payment');
+
+// Payments
 
 Auth::routes();
 Route::get('/logout', [LoginController::class, 'logout'])->middleware('is_admin');
@@ -86,4 +96,13 @@ Route::group(['prefix'=>'admin'], function(){
     Route::get('delete-file/{id}', [FileController::class, 'destroy'])->name('admin.delete.file')->middleware('is_admin');
     Route::get('edit-file/{id}', [FileController::class, 'edit'])->name('admin.edit.file')->middleware('is_admin');
 });
+
+// Route::post('/make-payment','PaymentsController@payment');
+Route::group(['prefix' => '/webhooks'], function () {
+    //PESAPAL
+    Route::get('donepayment', [App\Http\Controllers\PaymentsController::class, 'paymentsuccess'])->name('paymentsuccess');
+    Route::get('paymentconfirmation', [App\Http\Controllers\PaymentsController::class, 'paymentconfirmation']);
+});
+
+
 

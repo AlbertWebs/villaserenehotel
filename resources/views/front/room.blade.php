@@ -28,7 +28,7 @@
     <div class="room__details section-padding">
         <div class="container">
             <div class="row">
-                <div class="col-xl-3 col-lg-4 lg-mb-30">
+                <div class="col-xl-4 col-lg-4 lg-mb-30">
                     <div class="all__sidebar">
                         <div class="all__sidebar-item">
                             <h5>Your Price</h5>
@@ -38,46 +38,95 @@
                                     <li><i class="fal fa-users"></i>({{$rooms->bed_capacity}}) Guest's</li>
                                 </ul>
                                 <h4>KES {{$rooms->price}}<span>/Night</span></h4>
-                                <a class="theme-btn" href="contact.html">Book Now<i class="fal fa-long-arrow-right"></i></a>
+                                {{-- <a class="theme-btn" href="{{url('/')}}/book-now/{{$rooms->slug}}">Book Now<i class="fal fa-long-arrow-right"></i></a> --}}
                             </div>
                         </div>
 
                         <div class="all__sidebar-item">
-                            <h5>Search Now</h5>
+                            <h5>Book Online <i class="far fa-calendar"></i></h5>
                             <div class="all__sidebar-item-booking">
+                            <form acton="{{route('initiate-payment')}}" method="POST">
+                                @csrf
+
 								<div class="all__sidebar-item-booking-item mb-10">
-									<select name="select">
-										<option value="1">Check In</option>
-										<option value="2">Check In</option>
-										<option value="3">Check In</option>
-										<option value="4">Check In</option>
-										<option value="5">Check In</option>
-									</select>
+									<div class="col-sm-12 mb-30">
+                                        <div class="contact__area-form-item">
+                                            <i class="far fa-user"></i>
+                                            <input type="text" name="first_name" placeholder="Full Name" required="required">
+                                        </div>
+                                    </div>
 								</div>
-								<div class="all__sidebar-item-booking-item mb-10">
-									<select name="select">
-										<option value="1">Check Out</option>
-										<option value="2">Check Out</option>
-										<option value="3">Check Out</option>
-										<option value="4">Check Out</option>
-										<option value="5">Check Out</option>
-									</select>
+                                <div class="all__sidebar-item-booking-item mb-10">
+									<div class="col-sm-12 mb-30">
+                                        <div class="contact__area-form-item">
+                                            <i class="far fa-envelope"></i>
+                                            <input type="email" name="email" placeholder="email address" required="required">
+                                        </div>
+                                    </div>
 								</div>
-								<div class="all__sidebar-item-booking-item mb-30">
-									<select name="select">
-										<option value="1">Room</option>
-										<option value="2">1 Room</option>
-										<option value="3">2 Room</option>
-										<option value="4">3 Room</option>
-										<option value="5">4 Room</option>
-									</select>
+                                <input type="hidden" name="amount" value="{{$rooms->price}}">
+                                <input type="hidden" name="currency" value="KES">
+                                <div class="all__sidebar-item-booking-item mb-10">
+									<div class="col-sm-12 mb-30">
+                                        <div class="contact__area-form-item">
+                                            <i class="far fa-phone"></i>
+                                            <input type="text" name="mobile" placeholder="Mobile" required="required">
+                                        </div>
+                                    </div>
 								</div>
-								<a class="theme-btn" href="#">Check<i class="fal fa-long-arrow-right"></i></a>
+                                <div class="all__sidebar-item-booking-item mb-10">
+									<div class="col-sm-12 mb-30">
+                                        <div class="contact__area-form-item">
+                                            <i class="far fa-map-marker"></i>
+                                            <input type="text" name="address" placeholder="address" required="required">
+                                        </div>
+                                    </div>
+								</div>
+                                <div class="all__sidebar-item-booking-item mb-10">
+                                   <div class="row">
+                                        <div class="col-sm-6 mb-30">
+                                            <div class="contact__area-form-item">
+                                                <i class="far fa-calendar"></i>
+                                                <input type="date" name="arrive" placeholder="arrive" required="required">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 mb-30">
+                                            <div class="contact__area-form-item">
+                                                <i class="far fa-calendar"></i>
+                                                <input type="date" name="depart" placeholder="depart" required="required">
+                                            </div>
+                                        </div>
+                                   </div>
+								</div>
+                                <div class="all__sidebar-item-booking-item mb-10">
+                                    <div class="row">
+                                        <div class="col-sm-6 mb-30">
+                                            <div class="contact__area-form-item">
+                                                <i class="far fa-home"></i>
+                                                <input type="number" name="persons" placeholder="persons" required="required">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 mb-30">
+                                            <div class="contact__area-form-item">
+                                                <i class="far fa-home"></i>
+                                                <input type="text" value="{{$rooms->room_type}}" name="room_type" placeholder="address" required="required">
+                                            </div>
+                                        </div>
+                                    </div>
+								</div>
+
+                                <button class="theme-btn" type="submit">Submit Now<i class="fal fa-long-arrow-right"></i></button>
+                            </form>
+
+
+
+
+
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-9 col-lg-8">
+                <div class="col-xl-8 col-lg-8">
                     <div class="room__details-right">
                         <div class="room__details-right-content">
                             <h3 class="mb-25">{{$rooms->room_type}} Room - {{$rooms->comment}}</h3>
