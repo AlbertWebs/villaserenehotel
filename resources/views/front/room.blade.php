@@ -45,14 +45,14 @@
                         <div class="all__sidebar-item">
                             <h5>Book Online <i class="far fa-calendar"></i></h5>
                             <div class="all__sidebar-item-booking">
-                            <form acton="{{route('initiate-payment')}}" method="POST">
+                            <form method="POST" action="{{route('initiate-payment')}}" >
                                 @csrf
 
 								<div class="all__sidebar-item-booking-item mb-10">
 									<div class="col-sm-12 mb-30">
                                         <div class="contact__area-form-item">
                                             <i class="far fa-user"></i>
-                                            <input type="text" name="first_name" placeholder="Full Name" required="required">
+                                            <input type="text" name="name" placeholder="Full Name" required="required">
                                         </div>
                                     </div>
 								</div>
@@ -66,6 +66,8 @@
 								</div>
                                 <input type="hidden" name="amount" value="{{$rooms->price}}">
                                 <input type="hidden" name="currency" value="KES">
+                                <input type="hidden" name="description" value="{{$rooms->room_type}} Room">
+
                                 <div class="all__sidebar-item-booking-item mb-10">
 									<div class="col-sm-12 mb-30">
                                         <div class="contact__area-form-item">
@@ -115,7 +117,7 @@
                                     </div>
 								</div>
 
-                                <button class="theme-btn" type="submit">Submit Now<i class="fal fa-long-arrow-right"></i></button>
+                                <button class="theme-btn" type="submit">Book Now<i class="fal fa-long-arrow-right"></i></button>
                             </form>
 
 
@@ -130,9 +132,13 @@
                     <div class="room__details-right">
                         <div class="room__details-right-content">
                             <h3 class="mb-25">{{$rooms->room_type}} Room - {{$rooms->comment}}</h3>
-                            <p class="mb-25">Praesent non ullamcorper ligula. Proin a mi vitae massa lacinia sollicitudin eget eu ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque consectetur rhoncus lobortis. Curabitur sit amet velit sagittis, pellentesque diam euismod, faucibus quam. Cras non rhoncus ipsum. Quisque mattis arcu metus, a fermentum justo semper in. Aliquam egestas metus at nunc aliquam</p>
-                            <p class="m-0">id molestie ex ornare. Aliquam id arcu vel sem pretium porttitor non maximus diam. Quisque urna turpis, euismod sed elementum vel, pellentesque eu eros. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus musc.</p>
-                            <div class="row mb-35">
+                            <p class="mb-25">
+                                For your comfortable accommodation is offered only one room type - double in the hotel. For guests are provided facilities such as free toiletries, dining table.
+                                <br><br>
+                                Book Villa Serene Hotel online
+                                Book Villa Serene Hotel in advance using our website. We guarantees no fees and instant booking confirmation.
+                            </p>
+                           <div class="row mb-35">
                                 <?php
                                     $File = App\Models\File::where('unique',$rooms->id)->get();
                                 ?>
@@ -154,9 +160,13 @@
                                 <!-- Gallery Area End -->
 
                             </div>
-                            <h3 class="mb-25">Special check-in instructions</h3>
-                            <p class="mb-25">Praesent non ullamcorper ligula. Proin a mi vitae massa lacinia sollicitudin eget eu ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque consectetur rhoncus lobortis. Curabitur sit amet velit sagittis, pellentesque diam euismod, faucibus quam. Cras non rhoncus ipsum. Quisque mattis arcu metus, a fermentum justo semper in. Aliquam egestas metus at nunc aliquam</p>
-                            <p class="m-0">id molestie ex ornare. Aliquam id arcu vel sem pretium porttitor non maximus diam. Quisque urna turpis, euismod sed elementum vel, pellentesque eu eros. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus musc.</p>
+                            <h3 class="mb-25">Villa Serene Hotel description of infrastructure and services</h3>
+                            <p class="mb-25">
+                                On advance agreement, you can stay here with your pet. The hotel provides a room service. Guests can use the parking lot located on the territory. An accommodation option which will suit both a family vacation with children or with a group of friends is definitely a family room. Guests' meal is arranged at the restaurant. Please consider you can pay for the services only in cash.
+                                <br>
+                                Accommodation staff speaks English.
+                            </p>
+
                         </div>
                         <div class="room__details-right-list">
                             <h3>Amenities</h3>

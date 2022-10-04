@@ -29,6 +29,7 @@ use App\Http\Controllers\Auth\LoginController;
 
 Route::get('/', [HomeController::class, 'index'])->name('front.home');
 Route::get('/contact-us', [HomeController::class, 'contact'])->name('front.contact');
+Route::get('/email', [HomeController::class, 'email'])->name('front.email');
 Route::get('/bookings', [HomeController::class, 'bookings'])->name('front.bookings');
 Route::get('/bookings/{slung}', [HomeController::class, 'booking'])->name('front.booking');
 
@@ -41,7 +42,7 @@ Route::get('/copyright-statement', [HomeController::class, 'copyright'])->name('
 Route::get('/privacy-policy', [HomeController::class, 'privacy'])->name('front.policy');
 Route::get('/terms-and-conditions', [HomeController::class, 'terms'])->name('front.terms');
 
-Route::get('/book-now', [PaymentsController::class, 'payment'])->name('initiate-payment');
+Route::post('/book-now', [PaymentsController::class, 'payment'])->name('initiate-payment');
 
 // Payments
 

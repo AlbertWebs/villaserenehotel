@@ -212,6 +212,7 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
         'Pesapal' => Knox\Pesapal\Facades\Pesapal::class,
+        'Input' => Illuminate\Support\Facades\Request::class,
     ])->toArray(),
 
 ];

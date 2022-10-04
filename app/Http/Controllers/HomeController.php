@@ -52,6 +52,12 @@ class HomeController extends Controller
         return view('front.contact', compact('Setting'));
     }
 
+    public function email()
+    {
+        $Setting = Setting::find('1');
+        return view('front.email', compact('Setting'));
+    }
+
     public function copyright()
     {
         $About = About::find('1');
