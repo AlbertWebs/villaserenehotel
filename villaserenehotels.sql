@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 04, 2022 at 05:06 PM
+-- Generation Time: Sep 30, 2022 at 06:43 PM
 -- Server version: 8.0.30-0ubuntu0.22.04.1
 -- PHP Version: 8.1.2
 
@@ -55,7 +55,7 @@ CREATE TABLE `bookings` (
   `id` bigint UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `gender` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `gender` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `mobile` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `arrive` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -72,14 +72,12 @@ CREATE TABLE `bookings` (
 --
 
 INSERT INTO `bookings` (`id`, `name`, `email`, `gender`, `mobile`, `address`, `arrive`, `depart`, `persons`, `room_type`, `comment`, `created_at`, `updated_at`) VALUES
-(1, 'Albert  Muhatia', 'albertmuhatia@gmail.com', NULL, '0723014032', '3571 Riverside Downs', '2022-10-05', '2022-10-12', '3', 'Single', NULL, '2022-10-04 06:51:48', '2022-10-04 06:51:48'),
-(2, 'Albert  Muhatia', 'albertmuhatia@gmail.com', NULL, '254723014032', '3571 Riverside Downs', '2022-10-05', '2022-10-18', '1', 'Single', NULL, '2022-10-04 07:17:23', '2022-10-04 07:17:23'),
-(3, 'Albert  Muhatia', 'albertmuhatia@gmail.com', NULL, '254723014032', '3571 Riverside Downs', '2022-10-05', '2022-10-18', '1', 'Single', NULL, '2022-10-04 07:17:55', '2022-10-04 07:17:55'),
-(4, 'Albert  Muhatia', 'albertmuhatia@gmail.com', NULL, '254723014032', '3571 Riverside Downs', '2022-10-05', '2022-10-18', '1', 'Single', NULL, '2022-10-04 07:19:01', '2022-10-04 07:19:01'),
-(5, 'Albert  Muhatia', 'albertmuhatia@gmail.com', NULL, '0723014032', '3571 Riverside Downs', '2022-10-12', '2022-10-26', '1', 'Single', NULL, '2022-10-04 07:19:40', '2022-10-04 07:19:40'),
-(6, 'Albert  Muhatia', 'albertmuhatia@gmail.com', NULL, '0723014032', '80', '2022-10-05', '2022-10-12', '1', 'Single', NULL, '2022-10-04 07:23:52', '2022-10-04 07:23:52'),
-(7, 'Albert  Muhatia', 'albertmuhatia@gmail.com', NULL, '0723014032', '3571 Riverside Downs', '2022-10-06', '2022-10-14', '3', 'Single', NULL, '2022-10-04 10:45:24', '2022-10-04 10:45:24'),
-(8, 'Albert  Muhatia', 'albertmuhatia@gmail.com', NULL, '0723014032', '3571 Riverside Downs', '2022-10-06', '2022-10-14', '3', 'Single', NULL, '2022-10-04 10:45:59', '2022-10-04 10:45:59');
+(2, 'Albert  Muhatia', 'albertmuhatia@gmail.com', 'Male', '0723014032', '80', '9/22/2022', '9/23/2022', '3', 'Double', NULL, '2022-09-21 15:11:41', '2022-09-21 15:11:41'),
+(3, 'Albert  Muhatia', 'albertmuhatia@gmail.com', 'Male', '0723014032', '80', '9/22/2022', '9/23/2022', '3', 'Double', NULL, '2022-09-21 15:11:58', '2022-09-21 15:11:58'),
+(4, 'Albert  Muhatia', 'albertmuhatia@gmail.com', 'Male', '0723014032', '80', '9/22/2022', '9/23/2022', '3', 'Double', NULL, '2022-09-21 15:13:11', '2022-09-21 15:13:11'),
+(5, 'Henry WAMITHI', 'sales@skyheight.co.ke', 'Male', '0723014032', 'Western Heights 1st Floor, Karuna Road,', '9/23/2022', '9/30/2022', '1', 'Double', NULL, '2022-09-21 15:25:18', '2022-09-21 15:25:18'),
+(6, 'Peter odira kogals', 'albertmuhatia@gmail.com', 'Male', '0723014032', 'Moi Avenue', '9/23/2022', '9/30/2022', '3', 'King', 'This is a comments', '2022-09-21 15:37:39', '2022-09-21 15:59:33'),
+(7, 'Albert  Muhatia', 'nektatech@gmail.com', 'Male', '254723014032', '80', '9/29/2022', '10/27/2022', '3', 'Type: Single Detail:  Bed & Breakfast Room Number:  144', 'eafaf', '2022-09-30 05:46:37', '2022-09-30 05:46:37');
 
 -- --------------------------------------------------------
 
@@ -201,101 +199,6 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `payments`
---
-
-CREATE TABLE `payments` (
-  `id` bigint UNSIGNED NOT NULL,
-  `businessid` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `user_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `transactionid` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `trackingid` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `status` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `currency` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `amount` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `payments`
---
-
-INSERT INTO `payments` (`id`, `businessid`, `user_id`, `transactionid`, `trackingid`, `status`, `currency`, `amount`, `created_at`, `updated_at`) VALUES
-(1, '1', 'albertmuhatia@gmail.com', 'PESAPALo6CI8x4tEBk09g1', NULL, 'NEW', 'KES', '1500', '2022-10-04 03:17:09', '2022-10-04 03:17:09'),
-(2, '1', 'albertmuhatia@gmail.com', 'PESAPALDWI8k548Bcdl8mU', NULL, 'NEW', 'KES', '1500', '2022-10-04 03:17:32', '2022-10-04 03:17:32'),
-(3, '1', 'albertmuhatia@gmail.com', 'PESAPALN65CxacVgM2qgYu', NULL, 'NEW', 'KES', '1500', '2022-10-04 03:19:56', '2022-10-04 03:19:56'),
-(4, '1', 'albertmuhatia@gmail.com', 'PESAPALAO1dSippnyo3oOt', NULL, 'NEW', 'KES', '1500', '2022-10-04 03:20:05', '2022-10-04 03:20:05'),
-(5, '1', 'albertmuhatia@gmail.com', 'PESAPALF8lejRcUALL87oV', NULL, 'NEW', 'KES', '1500', '2022-10-04 03:21:10', '2022-10-04 03:21:10'),
-(6, '1', 'albertmuhatia@gmail.com', 'PESAPAL5dZw3kE78EXxf9F', NULL, 'NEW', 'KES', '1500', '2022-10-04 03:21:38', '2022-10-04 03:21:38'),
-(7, '1', 'albertmuhatia@gmail.com', 'PESAPALvoVPJqdG9OanG3S', NULL, 'NEW', 'KES', '1500', '2022-10-04 03:24:03', '2022-10-04 03:24:03'),
-(8, '1', 'albertmuhatia@gmail.com', 'PESAPALYKRej4oHwI2sSbl', NULL, 'NEW', 'KES', '1500', '2022-10-04 03:24:17', '2022-10-04 03:24:17'),
-(9, '1', 'albertmuhatia@gmail.com', 'PESAPAL17BkUlQu31cPMJA', NULL, 'NEW', 'KES', '1500', '2022-10-04 03:25:24', '2022-10-04 03:25:24'),
-(10, '1', 'albertmuhatia@gmail.com', 'PESAPALprbaMbNRSzu2Ylw', NULL, 'NEW', 'KES', '1500', '2022-10-04 03:32:24', '2022-10-04 03:32:24'),
-(11, '1', 'albertmuhatia@gmail.com', 'PESAPALoiD5r1jV4dMBeE5', NULL, 'NEW', 'KES', '1500', '2022-10-04 03:33:29', '2022-10-04 03:33:29'),
-(12, '1', 'albertmuhatia@gmail.com', 'PESAPALKWIoN9a8v8wTaof', NULL, 'NEW', 'KES', '1500', '2022-10-04 03:36:10', '2022-10-04 03:36:10'),
-(13, '1', 'albertmuhatia@gmail.com', 'PESAPALNwm2kJSxMbX8CwT', NULL, 'NEW', 'KES', '1500', '2022-10-04 03:47:19', '2022-10-04 03:47:19'),
-(14, '1', 'albertmuhatia@gmail.com', 'PESAPALNyiOGA6V8McGlCC', NULL, 'NEW', 'KES', '1500', '2022-10-04 03:50:49', '2022-10-04 03:50:49'),
-(15, '1', 'albertmuhatia@gmail.com', 'PESAPALXt19B0T2NiQ7lGn', NULL, 'NEW', 'KES', '1500', '2022-10-04 03:51:38', '2022-10-04 03:51:38'),
-(16, '1', 'albertmuhatia@gmail.com', 'PESAPALKupqyz97ZjQissu', NULL, 'NEW', 'KES', '1500', '2022-10-04 03:53:17', '2022-10-04 03:53:17'),
-(17, '1', 'albertmuhatia@gmail.com', 'PESAPALLDHHEHOIbdXrKxb', NULL, 'NEW', 'KES', '1500', '2022-10-04 03:53:47', '2022-10-04 03:53:47'),
-(18, '1', 'albertmuhatia@gmail.com', 'PESAPAL1Kb8Qujd82iZH1A', NULL, 'NEW', 'KES', '1500', '2022-10-04 03:55:51', '2022-10-04 03:55:51'),
-(19, '1', 'albertmuhatia@gmail.com', 'PESAPAL9VcySfGCeWuz6Yo', NULL, 'NEW', 'KES', '1500', '2022-10-04 04:13:46', '2022-10-04 04:13:46'),
-(20, '1', 'albertmuhatia@gmail.com', 'PESAPAL8deueUJqZVWmjo7', NULL, 'NEW', 'KES', '1500', '2022-10-04 04:19:26', '2022-10-04 04:19:26'),
-(21, '1', 'albertmuhatia@gmail.com', 'PESAPALz0niMWAoyVOpMPR', NULL, 'NEW', 'KES', '1500', '2022-10-04 05:18:21', '2022-10-04 05:18:21'),
-(22, '1', 'albertmuhatia@gmail.com', 'PESAPALAzxTmh3CmQANieu', NULL, 'NEW', 'KES', '1500', '2022-10-04 05:19:35', '2022-10-04 05:19:35'),
-(23, '1', 'albertmuhatia@gmail.com', 'PESAPALflKRW6WfOnznOTX', NULL, 'NEW', 'KES', '1500', '2022-10-04 05:20:15', '2022-10-04 05:20:15'),
-(24, '1', 'albertmuhatia@gmail.com', 'PESAPALgXmcP4QsPpZqz9D', NULL, 'NEW', 'KES', '1500', '2022-10-04 05:20:29', '2022-10-04 05:20:29'),
-(25, '1', 'albertmuhatia@gmail.com', 'PESAPALGCNRPqj40WQ0evj', NULL, 'NEW', 'KES', '1500', '2022-10-04 05:21:54', '2022-10-04 05:21:54'),
-(26, '1', 'albertmuhatia@gmail.com', 'PESAPALF4n0rSdrJ82NSM8', NULL, 'NEW', 'KES', '1500', '2022-10-04 05:22:41', '2022-10-04 05:22:41'),
-(27, '1', 'albertmuhatia@gmail.com', 'PESAPAL55O7Jx3ipz6cnhw', NULL, 'NEW', 'KES', '1500', '2022-10-04 05:22:49', '2022-10-04 05:22:49'),
-(28, '1', 'albertmuhatia@gmail.com', 'PESAPALGv2oP6VRZwU0eCF', NULL, 'NEW', 'KES', '1500', '2022-10-04 05:23:19', '2022-10-04 05:23:19'),
-(29, '1', 'albertmuhatia@gmail.com', 'PESAPAL3kxpv9A6NQHVnX7', NULL, 'NEW', 'KES', '1500', '2022-10-04 05:23:30', '2022-10-04 05:23:30'),
-(30, '1', 'albertmuhatia@gmail.com', 'PESAPALWukjT7EqhX9VQer', NULL, 'NEW', 'KES', '1500', '2022-10-04 05:23:42', '2022-10-04 05:23:42'),
-(31, '1', 'albertmuhatia@gmail.com', 'PESAPALPK3FShGkDVE2Dep', NULL, 'NEW', 'KES', '1500', '2022-10-04 05:24:12', '2022-10-04 05:24:12'),
-(32, '1', 'albertmuhatia@gmail.com', 'PESAPALO0iHorpcZSYdEJf', NULL, 'NEW', 'KES', '1500', '2022-10-04 05:24:37', '2022-10-04 05:24:37'),
-(33, '1', 'albertmuhatia@gmail.com', 'PESAPALQxyPzRIsKbhi0Is', NULL, 'NEW', 'KES', '1500', '2022-10-04 05:24:52', '2022-10-04 05:24:52'),
-(34, '1', 'albertmuhatia@gmail.com', 'PESAPALk4k6iJixgO1z0Gp', NULL, 'NEW', 'KES', '900', '2022-10-04 05:25:24', '2022-10-04 05:25:24'),
-(35, '1', 'albertmuhatia@gmail.com', 'PESAPALrw6HkQqUJoGvaGj', NULL, 'NEW', 'KES', '900', '2022-10-04 05:25:50', '2022-10-04 05:25:50'),
-(36, '1', 'albertmuhatia@gmail.com', 'PESAPAL7T8kOsLIugp7agn', NULL, 'NEW', 'KES', '0', '2022-10-04 05:28:29', '2022-10-04 05:28:29'),
-(37, '1', 'albertmuhatia@gmail.com', 'PESAPALyX7WZhFEdFiGHCf', NULL, 'NEW', 'KES', '300', '2022-10-04 05:31:54', '2022-10-04 05:31:54'),
-(38, '1', 'albertmuhatia@gmail.com', 'PESAPAL2oR1gHPDk4p1H2V', NULL, 'NEW', 'KES', '300', '2022-10-04 05:38:14', '2022-10-04 05:38:14'),
-(39, '1', 'albertmuhatia@gmail.com', 'PESAPALJAfFQOuR207KcMR', NULL, 'NEW', 'KES', '300', '2022-10-04 05:38:56', '2022-10-04 05:38:56'),
-(40, '1', 'albertmuhatia@gmail.com', 'PESAPALh73TdfuA0yEgimH', NULL, 'NEW', 'KES', '300', '2022-10-04 05:40:33', '2022-10-04 05:40:33'),
-(41, '1', 'albertmuhatia@gmail.com', 'PESAPAL1LlBpYyZxQmxZSE', NULL, 'NEW', 'KES', '300', '2022-10-04 05:42:07', '2022-10-04 05:42:07'),
-(42, '1', 'albertmuhatia@gmail.com', 'PESAPALIJrbksJhMo2fqfB', NULL, 'NEW', 'KES', '300', '2022-10-04 05:42:23', '2022-10-04 05:42:23'),
-(43, '1', 'albertmuhatia@gmail.com', 'PESAPALoWYbV9hTyWvBsk9', NULL, 'NEW', 'KES', '300', '2022-10-04 05:43:15', '2022-10-04 05:43:15'),
-(44, '1', 'albertmuhatia@gmail.com', 'PESAPALE2Rp9kwiyYd6qsX', NULL, 'NEW', 'KES', '300', '2022-10-04 05:44:42', '2022-10-04 05:44:42'),
-(45, '1', 'albertmuhatia@gmail.com', 'PESAPALGkmtgEYR6xU8EUQ', NULL, 'NEW', 'KES', '300', '2022-10-04 05:45:10', '2022-10-04 05:45:10'),
-(46, '1', 'albertmuhatia@gmail.com', 'PESAPALmrB4WiyhpshG7dB', NULL, 'NEW', 'KES', '300', '2022-10-04 05:45:44', '2022-10-04 05:45:44'),
-(47, '1', 'albertmuhatia@gmail.com', 'PESAPALPsPq3lMmvSJpgJK', NULL, 'NEW', 'KES', '300', '2022-10-04 05:46:42', '2022-10-04 05:46:42'),
-(48, '1', 'albertmuhatia@gmail.com', 'PESAPALgawGhzxkmfTb0Yc', NULL, 'NEW', 'KES', '300', '2022-10-04 05:47:40', '2022-10-04 05:47:40'),
-(49, '1', 'albertmuhatia@gmail.com', 'PESAPALC9ZLUCzTC8irqtR', NULL, 'NEW', 'KES', '300', '2022-10-04 05:48:03', '2022-10-04 05:48:03'),
-(50, '1', 'albertmuhatia@gmail.com', 'PESAPALnUQRhAoqdvvfWYf', NULL, 'NEW', 'KES', '300', '2022-10-04 05:48:40', '2022-10-04 05:48:40'),
-(51, '1', 'albertmuhatia@gmail.com', 'PESAPAL3v4LuWwBCik5bFs', NULL, 'NEW', 'KES', '300', '2022-10-04 05:48:59', '2022-10-04 05:48:59'),
-(52, '1', 'albertmuhatia@gmail.com', 'PESAPALGX0tM0K0QYF0dFZ', NULL, 'NEW', 'KES', '300', '2022-10-04 05:49:41', '2022-10-04 05:49:41'),
-(53, '1', 'albertmuhatia@gmail.com', 'PESAPALXFDfCHRlZK9pMtz', NULL, 'NEW', 'KES', '300', '2022-10-04 05:50:06', '2022-10-04 05:50:06'),
-(54, '1', 'albertmuhatia@gmail.com', 'PESAPALKjYSIKlXV4POMMJ', NULL, 'NEW', 'KES', '300', '2022-10-04 05:50:46', '2022-10-04 05:50:46'),
-(55, '1', 'albertmuhatia@gmail.com', 'PESAPALLU7hZb38OH1cifw', NULL, 'NEW', 'KES', '300', '2022-10-04 05:51:35', '2022-10-04 05:51:35'),
-(56, '1', 'albertmuhatia@gmail.com', 'PESAPALlHP4tcWGsJAQnoE', NULL, 'NEW', 'KES', '300', '2022-10-04 05:53:40', '2022-10-04 05:53:40'),
-(57, '1', 'albertmuhatia@gmail.com', 'PESAPALjYEZyaOB287QdT9', NULL, 'NEW', 'KES', '300', '2022-10-04 06:14:52', '2022-10-04 06:14:52'),
-(58, '1', 'albertmuhatia@gmail.com', 'PESAPALYJJ1xqIjeZDJVsZ', NULL, 'NEW', 'KES', '300', '2022-10-04 06:16:15', '2022-10-04 06:16:15'),
-(59, '1', 'albertmuhatia@gmail.com', 'PESAPALDQ5FgKbBLH9zPxw', NULL, 'NEW', 'KES', '300', '2022-10-04 06:17:10', '2022-10-04 06:17:10'),
-(60, '1', 'albertmuhatia@gmail.com', 'PESAPALPXYjC3WevObWY8n', NULL, 'NEW', 'KES', '1', '2022-10-04 06:17:58', '2022-10-04 06:17:58'),
-(61, '1', 'albertmuhatia@gmail.com', 'PESAPALfnDWWvZB9yYOBN9', NULL, 'NEW', 'KES', '2', '2022-10-04 06:32:39', '2022-10-04 06:32:39'),
-(62, '1', 'albertmuhatia@gmail.com', 'PESAPALnWzqM6mUon72jvd', '4e506cf0-bbad-4fe4-a64d-df88d9d18dbc', 'Confirmed', 'KES', '1', '2022-10-04 06:35:13', '2022-10-04 06:39:20'),
-(63, '1', 'albertmuhatia@gmail.com', 'PESAPAL59kNNvfXqbI5jMr', NULL, 'NEW', 'KES', '3', '2022-10-04 06:51:48', '2022-10-04 06:51:48'),
-(64, '1', 'albertmuhatia@gmail.com', 'PESAPALq6H92qR085O8Asu', NULL, 'NEW', 'KES', '1', '2022-10-04 07:17:23', '2022-10-04 07:17:23'),
-(65, '1', 'albertmuhatia@gmail.com', 'PESAPALIl7veJC9SdCegJ0', NULL, 'NEW', 'KES', '1', '2022-10-04 07:17:55', '2022-10-04 07:17:55'),
-(66, '1', 'albertmuhatia@gmail.com', 'PESAPAL20hRqg0qrSz1Iuj', NULL, 'NEW', 'KES', '1', '2022-10-04 07:19:01', '2022-10-04 07:19:01'),
-(67, '1', 'albertmuhatia@gmail.com', 'PESAPALaaSKQhm6hHAcUg8', 'fac57dfb-3666-4940-919f-df885223587d', 'Confirmed', 'KES', '1', '2022-10-04 07:19:40', '2022-10-04 07:20:28'),
-(68, '1', 'albertmuhatia@gmail.com', 'PESAPALX3UZSK0McHsYjoD', '06499f5d-cdbc-4309-840d-df88ff6c0d6e', 'Confirmed', 'KES', '1', '2022-10-04 07:23:52', '2022-10-04 07:24:40'),
-(69, '1', 'albertmuhatia@gmail.com', 'PESAPAL6p05Wh2WrNDivLR', NULL, 'NEW', 'KES', '3', '2022-10-04 10:45:25', '2022-10-04 10:45:25'),
-(70, '1', 'albertmuhatia@gmail.com', 'PESAPALDi6qcYS1IWjZrwH', NULL, 'NEW', 'KES', '3', '2022-10-04 10:45:59', '2022-10-04 10:45:59');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `personal_access_tokens`
 --
 
@@ -352,9 +255,9 @@ CREATE TABLE `rooms` (
 --
 
 INSERT INTO `rooms` (`id`, `room_number`, `slug`, `room_type`, `meal`, `cancellation_charges`, `bed_capacity`, `price`, `ratings`, `ratings_value`, `comment`, `status`, `created_at`, `updated_at`) VALUES
-(1, '12', 'single-12', 'Single', 'Free Breakfast', 'Free Cancellation', '1', '1', '2k', '4.9', 'Budget Bed & Breakfast', 1, '2022-09-22 06:39:16', '2022-09-30 07:12:44'),
-(2, '144', 'single-144', 'Single', 'Free Breakfast', 'Free Cancellation', '1', '200', '1k', '4.7', 'Bed & Breakfast', 0, '2022-09-22 10:34:39', '2022-09-30 07:12:49'),
-(3, '145', 'double-145', 'Double', 'Free Breakfast', 'Free Cancellation', '2', '250', '3k', '4.8', 'Bed & Breakfast', 1, '2022-09-22 10:34:39', '2022-09-30 07:13:05');
+(1, '12', 'single-12', 'Single', 'Free Breakfast', 'Free Cancellation', '1', '1500', '2k', '4.9', 'Budget Bed & Breakfast', 1, '2022-09-22 06:39:16', '2022-09-30 07:12:44'),
+(2, '144', 'single-144', 'Single', 'Free Breakfast', 'Free Cancellation', '1', '2000', '1k', '4.7', 'Bed & Breakfast', 0, '2022-09-22 10:34:39', '2022-09-30 07:12:49'),
+(3, '145', 'double-145', 'Double', 'Free Breakfast', 'Free Cancellation', '2', '2500', '3k', '4.8', 'Bed & Breakfast', 1, '2022-09-22 10:34:39', '2022-09-30 07:13:05');
 
 -- --------------------------------------------------------
 
@@ -479,12 +382,6 @@ ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
--- Indexes for table `payments`
---
-ALTER TABLE `payments`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
@@ -536,7 +433,7 @@ ALTER TABLE `abouts`
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `credentials`
@@ -567,12 +464,6 @@ ALTER TABLE `galleries`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
---
--- AUTO_INCREMENT for table `payments`
---
-ALTER TABLE `payments`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
