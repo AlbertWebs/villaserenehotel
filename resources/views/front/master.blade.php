@@ -8,6 +8,16 @@
 	<meta name="keywords" content="Villa Serene Hotel"/>
 	<meta name="author" content="Designekta Studios">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {{-- OG --}}
+    <link rel="canonical" href="{{url('/')}}"/>
+    <meta property="og:description" content="Villa Serene Hotel - Luxury Hotel In Kitale, Restaurant in Kitale">
+    <meta property="og:image" content="{{url('/')}}/favicon/apple-icon180.jpeg" />
+    <meta property="fb:app_id" content="431980657174772" />
+    <meta property="og:title" content="Villa Serene Hotel  - Best Lodging Hotel in Kitale - Self Contain Rooms" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{url('/')}}" />
+    {{--  --}}
 	<!-- Title of Site -->
 	<title>Villa Serene Hotel  - Best Lodging Hotel in Kitale - Self Contain Rooms</title>
 	<!-- Favicons -->
