@@ -4,12 +4,12 @@
 	<!-- Start Meta -->
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-	<meta name="description" content="Villa Serene Hotel - Luxury Hotel Booking "/>
+	<meta name="description" content="Villa Serene Hotel - Luxury Hotel In Kitale, Restaurant in Kitale "/>
 	<meta name="keywords" content="Villa Serene Hotel"/>
 	<meta name="author" content="Designekta Studios">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- Title of Site -->
-	<title>Villa Serene Hotel  - Luxury Hotel Booking</title>
+	<title>Villa Serene Hotel  - Best Lodging Hotel in Kitale - Self Contain Rooms</title>
 	<!-- Favicons -->
 	@include('favicon')
 	<!-- Bootstrap CSS -->
