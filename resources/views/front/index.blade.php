@@ -242,7 +242,7 @@ Our houses offer every convenience and feel just like “home”. This concept s
 							<p>
                                 Experience the pleasure of fine dining at Villa Serene Restaurant. The restaurant serves all day meals with a spread of diverse African cuisine. Villa Serene is operational 24/7 with all three major meals. Apart from excellent and comforting and family friendly setup, the restaurant boasts of a beautiful surrounding where you can cherish the scene of mother nature making it the finest luxury lodgins in Kitale.
                             </p>
-							<a class="theme-border-btn" href="{{url('/')}}/about-us">Learn More<i class="fal fa-long-arrow-right"></i></a>
+							<a id="restaurant" class="theme-border-btn" href="{{url('/')}}/about-us">Learn More<i class="fal fa-long-arrow-right"></i></a>
 						</div>
 					</div>
 				</div>
