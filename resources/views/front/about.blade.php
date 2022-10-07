@@ -37,7 +37,7 @@
         <div class="row">
             <div class="col-xl-12">
                 <div class="offers__area-image">
-                    <img class="img__full"  src="{{url('/')}}/uploads/images/hotels/Restaurant-main.jpeg" alt="">
+                    <img class="img__full" style="border-radius:10px;" src="{{url('/')}}/uploads/images/hotels/Restaurant-main.jpeg" alt="">
                 </div>
             </div>
         </div>

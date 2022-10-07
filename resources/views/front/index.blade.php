@@ -87,9 +87,9 @@ Our houses offer every convenience and feel just like “home”. This concept s
 					<div class="deluxe__area-btn">
 						<ul>
 							<li class="active" data-filter="*">All Rooms</li>
-							<li data-filter=".luxury">Luxury</li>
-							<li data-filter=".single">Single</li>
-							<li data-filter=".suite">Small Suite</li>
+                            <li data-filter=".single">Single Budget</li>
+							<li data-filter=".luxury">Single</li>
+							<li data-filter=".suite">Double Room</li>
 							<li data-filter=".family">Family</li>
 						</ul>
 					</div>
