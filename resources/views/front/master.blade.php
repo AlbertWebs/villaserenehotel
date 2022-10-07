@@ -190,11 +190,11 @@
         <br>
         <center>
             <div class="footer__area-widget-about-logo">
-                <a style="border:4px solid #a7a7a7; border-radius:10px;" href="https://www.tripadvisor.com/Hotel_Review-g678698-d21505946-Reviews-Villa_Serene_Hotel-Kitale_Rift_Valley_Province.html"><img style="width:150px; height:auto"  src="{{url('/')}}/uploads/icons/trip.jpg" alt=""></a>
-                <a style="border:4px solid #a7a7a7; border-radius:10px;" href="https://www.airbnb.com/rooms/46559026?guests=1&adults=1&s=67&unique_share_id=5de32231-8c45-415b-b3ec-5a7b2005b1e8"><img style="width:150px; max-height:70px; height:auto" src="{{url('/')}}/uploads/icons/Airbnb-logo.jpg" alt=""></a>
-                <a style="border:4px solid #a7a7a7; border-radius:10px;" href="https://www.booking.com/hotel/ke/villa-serene.html"><img style="width:150px; max-height:70px; height:auto" src="{{url('/')}}/uploads/icons/Booking.Com-Logo.jpg" alt=""></a>
-                <a style="border:4px solid #a7a7a7; border-radius:10px;" href="http://hikersbay.com/africa/kenya/hotel/ke/villa-serene-kitale.html?lang=en"><img style="width:150px; max-height:70px; height:auto" src="{{url('/')}}/uploads/icons/hikerbay.jpg" alt=""></a>
-                <a style="border:4px solid #a7a7a7; border-radius:10px;" href="https://planetofhotels.com/en/kenya/kitale/villa-serene-hotel"><img style="width:150px; max-height:70px; height:auto" src="{{url('/')}}/uploads/icons/planet-of-hotels_full_1565010282.jpg" alt=""></a>
+                <a class="partner-logo"  href="https://www.tripadvisor.com/Hotel_Review-g678698-d21505946-Reviews-Villa_Serene_Hotel-Kitale_Rift_Valley_Province.html"><img style="width:150px; height:auto"  src="{{url('/')}}/uploads/icons/trip.jpg" alt=""></a>
+                <a class="partner-logo"  href="https://www.airbnb.com/rooms/46559026?guests=1&adults=1&s=67&unique_share_id=5de32231-8c45-415b-b3ec-5a7b2005b1e8"><img style="width:150px; max-height:70px; height:auto" src="{{url('/')}}/uploads/icons/Airbnb-logo.jpg" alt=""></a>
+                <a class="partner-logo"  href="https://www.booking.com/hotel/ke/villa-serene.html"><img style="width:150px; max-height:70px; height:auto" src="{{url('/')}}/uploads/icons/Booking.Com-Logo.jpg" alt=""></a>
+                <a class="partner-logo"  href="http://hikersbay.com/africa/kenya/hotel/ke/villa-serene-kitale.html?lang=en"><img style="width:150px; max-height:70px; height:auto" src="{{url('/')}}/uploads/icons/hikerbay.jpg" alt=""></a>
+                <a class="partner-logo"  href="https://planetofhotels.com/en/kenya/kitale/villa-serene-hotel"><img style="width:150px; max-height:70px; height:auto" src="{{url('/')}}/uploads/icons/planet-of-hotels_full_1565010282.jpg" alt=""></a>
 
 
             </div>

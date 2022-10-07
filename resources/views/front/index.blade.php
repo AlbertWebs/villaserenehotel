@@ -363,10 +363,10 @@ Our houses offer every convenience and feel just like “home”. This concept s
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-xl-4 col-lg-6 xl-mb-30">
-					<div class="blog__area-item">
-						<div class="blog__area-item-image">
-							<a href="blog-details.html"><img src="{{asset('theme/assets/img/blog/blog-1.jpg')}}" alt=""></a>
+				<div class="col-xl-6 col-lg-6 xl-mb-30" style="border-radius:10px">
+					<div class="blog__area-item" style="border-radius:10px">
+						<div class="blog__area-item-image" style="border-radius:10px">
+							<a href="blog-details.html"><img style="border-radius:10px" style="border-radius:10px" src="{{asset('theme/assets/img/blog/blog-1.jpg')}}" alt=""></a>
 						</div>
 						<div class="blog__area-item-content">
 							<div class="blog__area-item-content-box">
@@ -384,10 +384,10 @@ Our houses offer every convenience and feel just like “home”. This concept s
 						</div>
 					</div>
 				</div>
-				<div class="col-xl-4 col-lg-6 lg-mb-30">
-					<div class="blog__area-item blog__area-item-hover">
-						<div class="blog__area-item-image">
-							<a href="blog-details.html"><img src="{{asset('theme/assets/img/blog/blog-2.jpg')}}" alt=""></a>
+				<div class="col-xl-6 col-lg-6 lg-mb-30" style="border-radius:10px">
+					<div class="blog__area-item blog__area-item-hover" style="border-radius:10px">
+						<div class="blog__area-item-image" style="border-radius:10px">
+							<a href="{{url('/')}}/bookings"><img style="border-radius:10px; max-height:357px;" src="{{url('/')}}/uploads/images/268155528.jpg" alt="Villa Serene Hotel"></a>
 						</div>
 						<div class="blog__area-item-content">
 							<div class="blog__area-item-content-box">
@@ -405,27 +405,7 @@ Our houses offer every convenience and feel just like “home”. This concept s
 						</div>
 					</div>
 				</div>
-				<div class="col-xl-4 col-lg-6">
-					<div class="blog__area-item">
-						<div class="blog__area-item-image">
-							<a href="blog-details.html"><img src="{{asset('theme/assets/img/blog/blog-3.jpg')}}" alt=""></a>
-						</div>
-						<div class="blog__area-item-content">
-							<div class="blog__area-item-content-box">
-								<div class="blog__area-item-content-box-date">
-									<h3>27</h3>
-									<span>July 2022</span>
-								</div>
-								<div class="blog__area-item-content-box-title">
-									<h5><a href="blog-details.html">Hotel Booking is the best choice for hotel booking.</a></h5>
-								</div>
-							</div>
-							<div class="blog__area-item-content-btn">
-								<a class="simple-btn-2" href="blog-details.html">Read More<i class="fal fa-long-arrow-right"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
+
 			</div>
 		</div>
 	</div>
