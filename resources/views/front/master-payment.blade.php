@@ -57,7 +57,7 @@
 								<ul>
                                     <li><a href="{{$Setting->facebook}}"><i class="fab fa-facebook-f"></i></a>
                                     </li>
-                                    <li><a href="{{$Setting->twitter}}"><i class="fab fa-twitter"></i></a>
+                                    <li><a target="new" href="https://tawk.to/chat/633fce7c54f06e12d898dfbf/1geojt6ic"><i class="fa fa-comment"></i></a>
                                     </li>
                                     <li><a href="{{$Setting->instagram}}"><i class="fab fa-instagram"></i></a>
                                     </li>
