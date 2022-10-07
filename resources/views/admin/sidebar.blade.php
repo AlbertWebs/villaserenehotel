@@ -19,15 +19,15 @@
                             <div class="profile-usertitle-job"> Manager </div>
                         </div>
                         <div class="sidebar-userpic-btn">
-                            <a class="tooltips" href="user_profile.html" data-placement="top"
+                            <a class="tooltips" href="{{route('admin.edit.setting')}}" data-placement="top"
                                 data-original-title="Profile">
                                 <i class="material-icons">person_outline</i>
                             </a>
-                            <a class="tooltips" href="email_inbox.html" data-placement="top"
+                            <a target="new" class="tooltips" href="https://gmail.com" data-placement="top"
                                 data-original-title="Mail">
                                 <i class="material-icons">mail_outline</i>
                             </a>
-                            <a class="tooltips" href="chat.html" data-placement="top"
+                            <a target="new" class="tooltips" href="https://dashboard.tawk.to/" data-placement="top"
                                 data-original-title="Chat">
                                 <i class="material-icons">chat</i>
                             </a>
@@ -72,17 +72,17 @@
                     </a>
                     <ul class="sub-menu">
                         <li class="nav-item">
-                            <a href="email_inbox.html" class="nav-link ">
+                            <a target="new" href="https://gmail.com" class="nav-link ">
                                 <span class="title">Inbox</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="email_view.html" class="nav-link ">
+                            <a target="new" href="https://gmail.com" class="nav-link ">
                                 <span class="title">View Mail</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="email_compose.html" class="nav-link ">
+                            <a target="new" href="https://gmail.com" class="nav-link ">
                                 <span class="title">Compose Mail</span>
                             </a>
                         </li>
@@ -156,7 +156,7 @@
                 <li class="nav-item">
                     <a href="#" class="nav-link nav-toggle">
                         <i class="material-icons">group</i>
-                        <span class="title">Staff</span>
+                        <span class="title">Staff(!)</span>
                         <span class="arrow"></span>
                     </a>
                     <ul class="sub-menu">
@@ -180,7 +180,7 @@
                 <li class="nav-item">
                     <a href="#" class="nav-link nav-toggle">
                         <i class="material-icons">local_taxi</i>
-                        <span class="title">Transportation</span>
+                        <span class="title">Transportation(!)</span>
                         <span class="arrow"></span>
                     </a>
                     <ul class="sub-menu">
@@ -239,11 +239,11 @@
                                 <span class="title">About Us</span>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="{{route('admin.edit.welcome')}}" class="nav-link ">
                                 <span class="title">Welcome Note</span>
                             </a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </li>
 
@@ -267,7 +267,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="{{route('admin.edit.credential')}}" class="nav-link ">
-                                <span class="title">Site Credentials</span>
+                                <span class="title">Site Credentials(!)</span>
                             </a>
                         </li>
                     </ul>
