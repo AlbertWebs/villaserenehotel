@@ -72,6 +72,7 @@ return array(
     'App\\Http\\Requests\\UpdateSettingRequest' => $baseDir . '/app/Http/Requests/UpdateSettingRequest.php',
     'App\\Http\\Requests\\UpdateTermRequest' => $baseDir . '/app/Http/Requests/UpdateTermRequest.php',
     'App\\Models\\About' => $baseDir . '/app/Models/About.php',
+    'App\\Models\\Blog' => $baseDir . '/app/Models/Blog.php',
     'App\\Models\\Booking' => $baseDir . '/app/Models/Booking.php',
     'App\\Models\\Credential' => $baseDir . '/app/Models/Credential.php',
     'App\\Models\\File' => $baseDir . '/app/Models/File.php',

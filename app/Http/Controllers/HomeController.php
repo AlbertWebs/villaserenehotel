@@ -75,6 +75,11 @@ class HomeController extends Controller
         $About = About::find('1');
         return view('front.privacy', compact('About'));
     }
-
+    public function articles($slung)
+    {
+        $Blog = \App\Models\Blog::where('slung',$slung)->get();
+        $Rooms = \App\Models\Room::where('status','1')->limit('3')->get();
+        return view('front.blog', compact('Blog','Rooms'));
+    }
 
 }

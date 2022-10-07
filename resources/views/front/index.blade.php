@@ -363,27 +363,33 @@ Our houses offer every convenience and feel just like “home”. This concept s
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-xl-6 col-lg-6 xl-mb-30" style="border-radius:10px">
+                <?php
+                    $Blogs = DB::table('blogs')->get();
+                ?>
+                @foreach ($Blogs as $blog)
+                <div class="col-xl-6 col-lg-6 xl-mb-30" style="border-radius:10px">
 					<div class="blog__area-item" style="border-radius:10px">
 						<div class="blog__area-item-image" style="border-radius:10px">
-							<a href="blog-details.html"><img style="border-radius:10px" style="border-radius:10px" src="{{asset('theme/assets/img/blog/blog-1.jpg')}}" alt=""></a>
+							<a href="{{url('/')}}/articles/{{$blog->slung}}"><img style="border-radius:10px" style="border-radius:10px" src="{{asset('theme/assets/img/blog/blog-1.jpg')}}" alt=""></a>
 						</div>
 						<div class="blog__area-item-content">
 							<div class="blog__area-item-content-box">
 								<div class="blog__area-item-content-box-date">
-									<h3>27</h3>
-									<span>July 2022</span>
+									<h3>{{date('d', strtotime($blog->created_at))}}</h3>
+									<span>{{date('M', strtotime($blog->created_at))}} {{date('Y', strtotime($blog->created_at))}}</span>
 								</div>
 								<div class="blog__area-item-content-box-title">
-									<h5><a href="blog-details.html">The ultimate guide to finding the best hotels in your area.</a></h5>
+									<h5><a href="{{url('/')}}/articles/{{$blog->slung}}">{{$blog->title}}</a></h5>
 								</div>
 							</div>
 							<div class="blog__area-item-content-btn">
-								<a class="simple-btn-2" href="blog-details.html">Read More<i class="fal fa-long-arrow-right"></i></a>
+								<a class="simple-btn-2" href="{{url('/')}}/articles/{{$blog->slung}}">Read More<i class="fal fa-long-arrow-right"></i></a>
 							</div>
 						</div>
 					</div>
 				</div>
+                @endforeach
+
 				<div class="col-xl-6 col-lg-6 lg-mb-30" style="border-radius:10px">
 					<div class="blog__area-item blog__area-item-hover" style="border-radius:10px">
 						<div class="blog__area-item-image" style="border-radius:10px">

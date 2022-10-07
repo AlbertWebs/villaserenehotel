@@ -599,6 +599,7 @@ class ComposerStaticInitcf7aa835f2bb5464a400206fa8801f63
         'App\\Http\\Requests\\UpdateSettingRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateSettingRequest.php',
         'App\\Http\\Requests\\UpdateTermRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateTermRequest.php',
         'App\\Models\\About' => __DIR__ . '/../..' . '/app/Models/About.php',
+        'App\\Models\\Blog' => __DIR__ . '/../..' . '/app/Models/Blog.php',
         'App\\Models\\Booking' => __DIR__ . '/../..' . '/app/Models/Booking.php',
         'App\\Models\\Credential' => __DIR__ . '/../..' . '/app/Models/Credential.php',
         'App\\Models\\File' => __DIR__ . '/../..' . '/app/Models/File.php',

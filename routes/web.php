@@ -32,7 +32,7 @@ Route::get('/contact-us', [HomeController::class, 'contact'])->name('front.conta
 Route::get('/email', [HomeController::class, 'email'])->name('front.email');
 Route::get('/bookings', [HomeController::class, 'bookings'])->name('front.bookings');
 Route::get('/bookings/{slung}', [HomeController::class, 'booking'])->name('front.booking');
-
+Route::get('/articles/{slung}', [HomeController::class, 'articles'])->name('front.articles');
 
 
 
