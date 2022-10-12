@@ -32,7 +32,7 @@
                 $File = App\Models\File::where('room_id',$rooms->id)->first();
             ?>
 
-            <div class="col-xl-4 col-lg-6 col-md-6 md-mb-30" style="margin-bottom:20px">
+            <div class="col-xl-6 col-lg-6 col-md-6 md-mb-30" style="margin-bottom:20px">
                 <div class="deluxe__three-item">
                     <div class="deluxe__three-item-image">
                         <img style="border-radius:10px; border:5px solid #a7a7a7;" class="room-image-rooms" src="{{url('/')}}/uploads/rooms/{{$File->filename}}" alt="">
