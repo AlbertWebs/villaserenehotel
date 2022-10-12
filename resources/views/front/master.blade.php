@@ -202,12 +202,12 @@
 		<div class="copyright__area">
 			<div class="container">
 				<div class="row align-items-center">
-					<div class="col-xl-6 col-lg-6 col-md-7 md-mb-10">
+					<div class="col-xl-7 col-lg-7 col-md-7 md-mb-10">
 						<div class="copyright__area-left md-t-center">
 							<p>Copyright © {{date('Y')}} <a href="{{url('/')}}">{{$Setting->sitename}}</a> All Rights Reserved | Powered by <a href="https://designekta.com">Designekta Studios</a></p>
 						</div>
 					</div>
-					<div class="col-xl-6 col-lg-6 col-md-5">
+					<div class="col-xl-5 col-lg-5 col-md-5">
 						<div class="copyright__area-right t-right md-t-center">
 							<ul>
 								<li><a href="{{url('/')}}/copyright-statement">Copyright Statement</a></li>
