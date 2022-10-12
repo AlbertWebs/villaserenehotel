@@ -45,17 +45,16 @@ class RoomController extends Controller
             $image = $request->file('file');
             $imageName = $image->getClientOriginalName();
             $image->move(public_path('uploads/rooms'),$imageName);
-        }else{
-            $imageName  =$request->image_cheat;
         }
+        // dd($imageName);
 
         $room_type = $request->room_type;
         $room_number = $request->room_number;
         $combine = $room_type . ' ' . $room_number;
         $slug = \Str::slug($combine);
-        $request->request->add(['slug' => $slug]);
-        $request->request->add(['thumbnail' => $imageName]);
+        $request->request->add(['slug' => $slug,'thumbnail' => $imageName]);
         $data = $request->except(['_token','file','image_cheat']);
+
         $booking = Room::create($data);
         // Add To Files
         $RoomLatest = Room::latest()->first();
