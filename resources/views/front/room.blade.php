@@ -150,7 +150,7 @@
                                             @foreach ($File as $files)
                                             <div class="col-lg-3 col-sm-12 sm-mb-10" style="margin-bottom:10px;">
                                                 <div class="gallery__area-item">
-                                                    <a class="img-popup" href="{{url('/')}}/uploads/images/{{$files->filename}}"><img style="border-radius:10px; border:5px solid #a7a7a7;" class="img__full room-image" src="{{url('/')}}/uploads/images/{{$files->filename}}" alt=""></a>
+                                                    <a class="img-popup" href="{{url('/')}}/uploads/images/{{$files->filename}}"><img style="border-radius:10px; border:5px solid #a7a7a7;" class="img__full room-images" src="{{url('/')}}/uploads/images/{{$files->filename}}" alt=""></a>
                                                 </div>
                                             </div>
                                             @endforeach
