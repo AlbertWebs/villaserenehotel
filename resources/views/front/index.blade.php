@@ -358,11 +358,11 @@ Our houses offer every convenience and feel just like “home”. This concept s
 									<span>July 2022</span>
 								</div>
 								<div class="blog__area-item-content-box-title">
-									<h5><a href="blog-details.html">Book a room Today most Affordable Rates.</a></h5>
+									<h5><a href="{{url('/')}}/bookings">Book a room Today most Affordable Rates.</a></h5>
 								</div>
 							</div>
 							<div class="blog__area-item-content-btn">
-								<a class="simple-btn-2" href="blog-details.html">Read More<i class="fal fa-long-arrow-right"></i></a>
+								<a class="simple-btn-2" href="{{url('/')}}/bookings">Read More<i class="fal fa-long-arrow-right"></i></a>
 							</div>
 						</div>
 					</div>
