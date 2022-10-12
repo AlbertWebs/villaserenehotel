@@ -38,7 +38,7 @@
                                 here</li>
                         </ul>
                     </div>
-                    <form action="{{route('admin.update.room', ['id'=>$Room->id])}}" method="post">
+                    <form action="{{route('admin.update.room', ['id'=>$Room->id])}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="card-body row">
                             <div class="col-lg-6 p-t-20">
@@ -60,11 +60,9 @@
                                     <ul data-mdl-for="list3" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
                                         <li class="mdl-menu__item" data-val="1">Single</li>
                                         <li class="mdl-menu__item" data-val="2">Double</li>
-                                        <li class="mdl-menu__item" data-val="3">Quad</li>
-                                        <li class="mdl-menu__item" data-val="4">King</li>
-                                        <li class="mdl-menu__item" data-val="5">Suite</li>
-                                        <li class="mdl-menu__item" data-val="6">Apartments</li>
-                                        <li class="mdl-menu__item" data-val="7">Villa</li>
+                                        <li class="mdl-menu__item" data-val="3">Single Budget</li>
+                                        <li class="mdl-menu__item" data-val="4">Family</li>
+
                                     </ul>
                                 </div>
                             </div>
@@ -143,6 +141,14 @@
                                     <label class="mdl-textfield__label" for="text7">Room Details</label>
                                 </div>
                             </div>
+                            <div class="col-lg-6 p-t-20">
+                                <label class="form-label" for="customFile">Thumbnail</label>
+                                <input type="file" name="file" class="form-control" id="customFile" />
+                            </div>
+                            <div class="col-lg-6 p-t-20">
+                                <img style="width:300px" src="{{url('/')}}/uploads/rooms/{{$Room->thumbnail}}" alt="{{$Room->room_type}}">
+                            </div>
+                            <input type="hidden" name="image_cheat" value="{{$Room->thumbnail}}">
                             <div class="col-lg-12 p-t-20 text-center">
                                 <button type="submit
                                 "

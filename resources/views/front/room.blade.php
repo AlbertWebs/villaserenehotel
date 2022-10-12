@@ -140,7 +140,7 @@
                             </p>
                            <div class="row mb-35">
                                 <?php
-                                    $File = App\Models\File::where('unique',$rooms->id)->get();
+                                    $File = App\Models\File::where('room_id',$rooms->id)->get();
                                 ?>
 
                                 <!-- Gallery Area Start -->

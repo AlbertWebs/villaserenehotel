@@ -29,7 +29,7 @@
         <div class="row">
             @foreach ($Rooms as $rooms)
             <?php
-                $File = App\Models\File::where('unique',$rooms->id)->first();
+                $File = App\Models\File::where('room_id',$rooms->id)->first();
             ?>
 
             <div class="col-xl-4 col-lg-6 col-md-6 md-mb-30" style="margin-bottom:20px">

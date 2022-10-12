@@ -38,7 +38,7 @@
                                 here</li>
                         </ul>
                     </div>
-                    <form action="{{route('admin.store.room')}}" method="post">
+                    <form action="{{route('admin.store.room')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="card-body row">
                             <div class="col-lg-6 p-t-20">
@@ -60,11 +60,8 @@
                                     <ul data-mdl-for="list3" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
                                         <li class="mdl-menu__item" data-val="1">Single</li>
                                         <li class="mdl-menu__item" data-val="2">Double</li>
-                                        <li class="mdl-menu__item" data-val="3">Quad</li>
-                                        <li class="mdl-menu__item" data-val="4">King</li>
-                                        <li class="mdl-menu__item" data-val="5">Suite</li>
-                                        <li class="mdl-menu__item" data-val="6">Apartments</li>
-                                        <li class="mdl-menu__item" data-val="7">Villa</li>
+                                        <li class="mdl-menu__item" data-val="3">Single Budget</li>
+                                        <li class="mdl-menu__item" data-val="4">Family</li>
                                     </ul>
                                 </div>
                             </div>
@@ -143,6 +140,10 @@
                                     <label class="mdl-textfield__label" for="text7">Room Details</label>
                                 </div>
                             </div>
+                            <div class="col-lg-12 p-t-20">
+                                <label class="form-label" for="customFile">Thumbnail</label>
+                                <input type="file" name="file" class="form-control" id="customFile" />
+                            </div>
                             <div class="col-lg-12 p-t-20 text-center">
                                 <button type="submit"
                                     class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 m-r-20 btn-pink">Submit</button>
@@ -150,21 +151,11 @@
                                     class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-default">Cancel</button>
                             </div>
                         </div>
+                        {{-- Image --}}
+
+                        {{-- Image --}}
                     </form>
-                    <div class="col-lg-12 p-t-20">
-                        <label class="control-label col-md-3">Upload Room Photos</label>
-                        <form id="id_dropzone" class="dropzone">
-                            <div class="dz-message">
-                                <div class="dropIcon">
-                                    <i class="material-icons">cloud_upload</i>
-                                </div>
-                                <h3>Drop files here or click to upload.</h3>
-                                <em>(This is just a demo. Selected files are <strong>not</strong>
-                                    actually uploaded.)
-                                </em>
-                            </div>
-                        </form>
-                    </div>
+
                 </div>
             </div>
         </div>

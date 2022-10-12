@@ -51,7 +51,7 @@ class FileController extends Controller
 
         $imageUpload = new File();
         $imageUpload->filename = $imageName;
-        $imageUpload->unique = $request->unique;
+        $imageUpload->room_id = $request->room_id;
         $imageUpload->type = $request->type;
         $imageUpload->save();
         return response()->json(['success'=>$imageName]);
@@ -101,7 +101,7 @@ class FileController extends Controller
 
         $update = array(
             'type' => $request->type,
-            'unique' => $request->unique,
+            'room_id' => $request->room_id,
             'filename' => $imageName,
         );
         File::where('id',$id)->update($update);

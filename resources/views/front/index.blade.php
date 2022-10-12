@@ -2,7 +2,7 @@
 
 @section('content')
 	<!-- Banner Area Start -->
-	<div class="banner__area" data-background="{{asset('theme/assets/img/bg-3.jpg')}}">
+	<div class="banner__area" data-background="{{asset('uploads/images/slider.jpeg')}}">
 		<div class="container">
 			<div class="row">
 				<div class="col-xl-12">
@@ -62,7 +62,7 @@ Our houses offer every convenience and feel just like “home”. This concept s
 				<div class="col-xl-7 col-lg-6">
 					<div class="accommodations__area-right">
 						<div class="accommodations__area-right-image">
-							<img style="border-radius:10px; max-height:350px; max-width:530px;" src="{{url('/')}}/uploads/images/badroom.png" alt="">
+							<img style="border-radius:10px; max-height:350px; max-width:530px;" src="{{url('/')}}/uploads/images/index-2.jpeg" alt="">
 							<div class="accommodations__area-right-image-two">
 								<img style="border-radius:10px" src="{{url('/')}}/uploads/images/foood.png" alt="">
 							</div>
@@ -79,7 +79,7 @@ Our houses offer every convenience and feel just like “home”. This concept s
 			<div class="row align-items-end mb-60">
 				<div class="col-xl-5">
 					<div class="deluxe__area-title">
-						<span class="subtitle__one">Single & Double</span>
+						<span class="subtitle__one">Single , Double & Family</span>
 						<h2>Our Rooms</h2>
 					</div>
 				</div>
@@ -87,75 +87,31 @@ Our houses offer every convenience and feel just like “home”. This concept s
 					<div class="deluxe__area-btn">
 						<ul>
 							<li class="active" data-filter="*">All Rooms</li>
-                            <li data-filter=".single">Single Budget</li>
-							<li data-filter=".luxury">Single</li>
-							<li data-filter=".suite">Double Room</li>
-							<li data-filter=".family">Family</li>
+                            <li data-filter=".Single">Single Budget</li>
+							<li data-filter=".Luxury">Single</li>
+							<li data-filter=".Double">Double Room</li>
+							<li data-filter=".Family">Family</li>
 						</ul>
 					</div>
 				</div>
 			</div>
 			<div class="row deluxe__area-active">
-				<div class="col-xl-3 col-lg-4 mb-30 suite">
-					<div class="deluxe__area-item">
-						<div class="deluxe__area-item-image" style="border-radius:10px;">
-							<img style="border-radius:10px;" class="img__full" src="{{asset('theme/assets/img/luxury/luxury-1.jpg')}}" alt="">
-						</div>
-						<div class="deluxe__area-item-content">
-							<h6><a href="#"><span>KES 13400</span> / Night</a></h6>
-							<h4><a href="room-details.html">Small Suite</a></h4>
-							<a class="simple-btn" href="{{url('/')}}/book-room/room-slung"><i class="far fa-chevron-right"></i>Booking Now</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-6 col-lg-8 mb-30 suite">
-					<div class="deluxe__area-item deluxe__area-item-hover">
-						<div class="deluxe__area-item-image">
-							<img style="border-radius:10px;" class="img__full" src="{{asset('theme/assets/img/luxury/luxury-2.jpg')}}" alt="">
-						</div>
-						<div class="deluxe__area-item-content">
-							<h6><a href="#"><span>KES 19900</span> / Night</a></h6>
-							<h4><a href="room-details.html">Deluxe Room</a></h4>
-							<a class="simple-btn" href="{{url('/')}}/book-room/room-slung"><i class="far fa-chevron-right"></i>Booking Now</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-3 col-lg-4 mb-30 family">
-					<div class="deluxe__area-item">
-						<div class="deluxe__area-item-image">
-							<img style="border-radius:10px;" class="img__full" src="{{asset('theme/assets/img/luxury/luxury-3.jpg')}}" alt="">
-						</div>
-						<div class="deluxe__area-item-content">
-							<h6><a href="#"><span>KES 31900</span> / Night</a></h6>
-							<h4><a href="room-details.html">Family Room</a></h4>
-							<a class="simple-btn" href="{{url('/')}}/book-room/room-slung"><i class="far fa-chevron-right"></i>Booking Now</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-6 col-lg-8 lg-mb-30 single">
-					<div class="deluxe__area-item">
-						<div class="deluxe__area-item-image">
-							<img style="border-radius:10px;" class="img__full" src="{{asset('theme/assets/img/luxury/luxury-4.jpg')}}" alt="">
-						</div>
-						<div class="deluxe__area-item-content">
-							<h6><a href="#"><span>KES 16900</span> / Night</a></h6>
-							<h4><a href="room-details.html">Single Room</a></h4>
-							<a class="simple-btn" href="{{url('/')}}/book-room/room-slung"><i class="far fa-chevron-right"></i>Booking Now</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-6 luxury">
+                <?php $rooms = DB::table('rooms')->get(); ?>
+                @foreach($rooms as $room)
+                <div class="col-xl-{{$room->width}} col-lg-{{$room->width}} mb-30 {{$room->room_type}}" style="border-radius:10px;">
 					<div class="deluxe__area-item" style="border-radius:10px;">
-						<div class="deluxe__area-item-image">
-							<img style="border-radius:10px;" class="img__full" src="{{asset('theme/assets/img/luxury/luxury-5.jpg')}}" alt="">
+						<div class="deluxe__area-item-image" style="border-radius:10px;">
+							<img style="border-radius:10px;" class="img__full" src="{{url('/')}}/uploads/rooms/{{$room->thumbnail}}" alt="">
 						</div>
-						<div class="deluxe__area-item-content">
-							<h6><a href="#"><span>KES 24900</span> / Night</a></h6>
-							<h4><a href="room-details.html">Luxury Room</a></h4>
-							<a class="simple-btn" href="{{url('/')}}/book-room/room-slung"><i class="far fa-chevron-right"></i>Booking Now</a>
+						<div class="deluxe__area-item-content" style="border-radius:10px;">
+							<h6><a href="#"><span>KES {{$room->price}}</span> / Night</a></h6>
+							<h4><a href="{{url('/')}}/bookings/{{$room->slug}}">{{$room->room_type}} Room Number{{$room->room_number}}</a></h4>
+							<a class="simple-btn" href="{{url('/')}}/bookings/{{$room->slug}}"><i class="far fa-chevron-right"></i>Booking Now</a>
 						</div>
 					</div>
 				</div>
+                @endforeach
+
 			</div>
 		</div>
 	</div>
@@ -226,7 +182,7 @@ Our houses offer every convenience and feel just like “home”. This concept s
 	</div>
 	<!-- Services Area End -->
 	<!-- Feature Area Start -->
-	<div class="feature__area">
+	<div class="feature__area" id="restaurant">
 		<div class="container">
 			<div class="row align-items-center bg-left mb-60">
 				<div class="col-xl-6 col-lg-6">
@@ -234,7 +190,7 @@ Our houses offer every convenience and feel just like “home”. This concept s
 						<img style="border-radius:10px" class="img__full" src="{{url('/')}}/uploads/images/hotels/Restaurant-main.jpeg" alt="">
 					</div>
 				</div>
-				<div class="col-xl-6 col-lg-6">
+				<div class="col-xl-6 col-lg-6"  >
 					<div class="feature__area-left">
 						<div class="feature__area-left-title">
 							<span class="subtitle__one">Our Food</span>
@@ -242,7 +198,7 @@ Our houses offer every convenience and feel just like “home”. This concept s
 							<p>
                                 Experience the pleasure of fine dining at Villa Serene Restaurant. The restaurant serves all day meals with a spread of diverse African cuisine. Villa Serene is operational 24/7 with all three major meals. Apart from excellent and comforting and family friendly setup, the restaurant boasts of a beautiful surrounding where you can cherish the scene of mother nature making it the finest luxury lodgins in Kitale.
                             </p>
-							<a id="restaurant" class="theme-border-btn" href="{{url('/')}}/about-us">Learn More<i class="fal fa-long-arrow-right"></i></a>
+							<a class="theme-border-btn" href="{{url('/')}}/about-us">Learn More<i class="fal fa-long-arrow-right"></i></a>
 						</div>
 					</div>
 				</div>

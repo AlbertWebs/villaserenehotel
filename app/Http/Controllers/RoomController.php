@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreRoomRequest;
 use App\Http\Requests\UpdateRoomRequest;
 use App\Models\Room;
+use App\Models\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
@@ -40,12 +41,32 @@ class RoomController extends Controller
      */
     public function store(Request $request)
     {
+        if($request->hasFile('file')){
+            $image = $request->file('file');
+            $imageName = $image->getClientOriginalName();
+            $image->move(public_path('uploads/rooms'),$imageName);
+        }else{
+            $imageName  =$request->image_cheat;
+        }
+
         $room_type = $request->room_type;
         $room_number = $request->room_number;
         $combine = $room_type . ' ' . $room_number;
         $slug = \Str::slug($combine);
         $request->request->add(['slug' => $slug]);
-        $booking = Room::create($request->except(['_token']));
+        $request->request->add(['thumbnail' => $imageName]);
+        $data = $request->except(['_token','file','image_cheat']);
+        $booking = Room::create($data);
+        // Add To Files
+        $RoomLatest = Room::latest()->first();
+        $RoomId =  $RoomLatest->id;
+        //
+        $imageUpload = new File();
+        $imageUpload->filename = $imageName;
+        $imageUpload->room_id = $RoomId;
+        $imageUpload->type = "room";
+        $imageUpload->save();
+        //
         return redirect()->route('admin.view.room')->with('success', 'Room ' . $booking->id . ' created');
     }
 
@@ -82,12 +103,21 @@ class RoomController extends Controller
      */
     public function update(Request $request, $id)
     {
+        if($request->hasFile('file')){
+            $image = $request->file('file');
+            $imageName = $image->getClientOriginalName();
+            $image->move(public_path('uploads/rooms'),$imageName);
+        }else{
+            $imageName  =$request->image_cheat;
+        }
+
         $room_type = $request->room_type;
         $room_number = $request->room_number;
         $combine = $room_type . ' ' . $room_number;
         $slug = \Str::slug($combine);
         $request->request->add(['slug' => $slug]);
-        $data = $request->except(['_token']);
+        $request->request->add(['thumbnail' => $imageName]);
+        $data = $request->except(['_token','file','image_cheat']);
         Room::where('id',$id)->update($data);
         return back();
     }

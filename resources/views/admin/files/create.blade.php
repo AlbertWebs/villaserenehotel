@@ -44,7 +44,7 @@
                             <form id="id_dropzone" class="dropzone" action="{{route('admin.store.file')}}" enctype="multipart/form-data">
                                 @csrf
                                 <input type="hidden" name="type" value="room">
-                                <input type="hidden" name="unique" value="2">
+                                <input type="hidden" name="room_id" value="2">
                                 <div class="dz-message">
                                     <div class="dropIcon">
                                         <i class="material-icons">cloud_upload</i>

@@ -46,10 +46,10 @@
 
 
                             @if($File->type == "room")
-                            {{-- <?php $Room = \App\Models\Room::find($File->unique); ?> --}}
+                            {{-- <?php $Room = \App\Models\Room::find($File->room_id); ?> --}}
 
                             <div class="col-lg-6 p-t-20">
-                                <select class="form-control" id="selitemIcon" name="unique">
+                                <select class="form-control" id="selitemIcon" name="room_id">
                                     <?php $Rooms = \App\Models\Room::all(); ?>
                                         @foreach ($Rooms as $item)
                                             <option value="{{$item->id}}"><strong>Type: </strong>{{$item->room_type}} <strong>Detail: </strong> {{$item->comment}} <strong>Room Number: </strong> {{$item->room_number}}</option>
@@ -59,7 +59,7 @@
                             @else
                             <div class="col-lg-6 p-t-20">
                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-                                    <input class="mdl-textfield__input" type="text" id="txtRoomNo" value="{{$File->unique}}" name="unique">
+                                    <input class="mdl-textfield__input" type="text" id="txtRoomNo" value="{{$File->room_id}}" name="room_id">
                                     <label class="mdl-textfield__label">Location</label>
                                 </div>
                             </div>
