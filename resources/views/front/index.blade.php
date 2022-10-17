@@ -53,7 +53,7 @@
 						<span class="subtitle__one">Food & Accommodations</span>
 						<h2>Welcome to Villa Serene Hotel</h2>
 						<p>
-                            Located in light industrial zoning allows for very quiet nights. There are important amenities within 10 miles.
+                            Located in an agricultural zone allows for very quiet nights. There are important amenities within 10 miles.
 Our houses offer every convenience and feel just like “home”. This concept sets us apart and places us at the forefront of providing exceptional  lodging services.We would be honored to serve you on your next visit to Villa Serene Hotel.
                         </p>
 						<a class="theme-btn" href="{{url('/')}}/about-us">Read More<i class="fal fa-long-arrow-right"></i></a>
@@ -238,7 +238,7 @@ Our houses offer every convenience and feel just like “home”. This concept s
 							<p>
                                 Unwind in the magic of our rooms, from waking up to the sound of nature, to enjoy the peace and serenity of Our Villa. All our rooms are self contained well spaced and are equipped with basic facilities.
                                 <br><br>
-                                For those yearning to experience unmatched sophistication, book one of our best hotel rooms in Kitale and let us take care of the rest.
+                                For those yearning to experience unmatched serenity, book one of our rooms in Kitale and let us take care of the rest.
                             </p>
                             <p>
 
@@ -314,7 +314,7 @@ Our houses offer every convenience and feel just like “home”. This concept s
 				<div class="col-xl-12">
 					<div class="blog__area-title">
 						<span class="subtitle__one">Our Blog</span>
-						<h2>Read Our Blog amd News</h2>
+						<h2>Read Our Blog and News</h2>
 					</div>
 				</div>
 			</div>
