@@ -24,22 +24,20 @@
 
 
 <!-- Modern Room Area Start -->
-<div class="modern__room section-padding">
-    <div class="container">
-        <div class="row">
-
-
-            <div class="row deluxe__area-active">
+<div class="modern__room section-padding" >
+    <div class="container" >
+        <div class="row" >
+            <div class="row deluxe__area-active" >
                 <?php $rooms = DB::table('rooms')->get(); ?>
                 @foreach($rooms as $room)
-                <div class="col-xl-{{$room->width}} col-lg-{{$room->width}} mb-30 {{$room->room_type}}" style="border-radius:10px;">
+                <div class="col-xl-6 col-lg-{{$room->width}} mb-30 {{$room->room_type}} room-width" style="border-radius:10px;">
                     <div class="deluxe__area-item" style="border-radius:10px;">
                         <div class="deluxe__area-item-image" style="border-radius:10px;">
                             <img style="border-radius:10px;" class="img__full" src="{{url('/')}}/uploads/rooms/{{$room->thumbnail}}" alt="">
                         </div>
                         <div class="deluxe__area-item-content" style="border-radius:10px;">
                             <h6><a href="#"><span>KES {{$room->price}}</span> / Night</a></h6>
-                            <h4><a href="{{url('/')}}/bookings/{{$room->slug}}">{{$room->room_type}} Room Number{{$room->room_number}}</a></h4>
+                            <h4><a href="{{url('/')}}/bookings/{{$room->slug}}">{{$room->room_type}} | Room Number{{$room->room_number}}</a></h4>
                             <a class="simple-btn" href="{{url('/')}}/bookings/{{$room->slug}}"><i class="far fa-chevron-right"></i>Booking Now</a>
                         </div>
                     </div>

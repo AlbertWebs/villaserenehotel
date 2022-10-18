@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    <?php $Setting = \App\Models\Setting::find('1'); ?>
 <head>
 	<!-- Start Meta -->
 	<meta charset="UTF-8">
@@ -63,9 +64,9 @@
 					<div class="header__area-menubar-right">
 						<div class="header__area-menubar-right-menu menu-responsive">
 							<ul id="mobilemenu">
-								<li><a href="{{url('/')}}">Home</a>
+								{{-- <li><a href="{{url('/')}}">Home</a>
 
-								</li>
+								</li> --}}
                                 <li><a href="{{url('/about-us')}}">About Us</a>
 
 								</li>
@@ -85,6 +86,7 @@
 					<div class="header__area-menubar-right-box">
 						<div class="header__area-menubar-right-box-btn">
 							<a class="theme-btn" href="{{url('/')}}/bookings">Book Now<i class="fal fa-long-arrow-right"></i></a>
+                            <a class="theme-btn" href="tel:{{$Setting->mobile_one}}">Call Us<i class="fal fa-phone"></i></a>
 						</div>
 					</div>
 				</div>
@@ -103,7 +105,7 @@
 							<div class="footer__area-widget-about-logo">
 								<a href="{{url('/')}}"><img  src="{{url('/')}}/uploads/logo/logo.png" alt=""></a>
 							</div>
-                            <?php $Setting = \App\Models\Setting::find('1'); ?>
+
 							<p>We have created a unique lodging concept geared to the seasoned business traveler and we are the #1 comfort hotel services in Kitale.</p>
 							<div class="footer__area-widget-about-social">
 								<ul>
