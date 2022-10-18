@@ -5,7 +5,7 @@
 
 
 <!-- Page Banner Start -->
-<div class="page__banner" data-background="{{asset('theme/assets/img/banner/page-banner-9.jpg')}}">
+<div class="page__banner" data-background="{{asset('theme/assets/img/banner/page-banner-9.jpeg')}}">
     <div class="container">
         <div class="row">
             <div class="col-xl-12">

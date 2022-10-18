@@ -28,11 +28,13 @@ use App\Http\Controllers\Auth\LoginController;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('front.home');
+Route::get('/menu', [HomeController::class, 'menu'])->name('front.menu');
 Route::get('/contact-us', [HomeController::class, 'contact'])->name('front.contact');
 Route::get('/email', [HomeController::class, 'email'])->name('front.email');
 Route::get('/bookings', [HomeController::class, 'bookings'])->name('front.bookings');
 Route::get('/bookings/{slung}', [HomeController::class, 'booking'])->name('front.booking');
 Route::get('/articles/{slung}', [HomeController::class, 'articles'])->name('front.articles');
+
 
 
 
