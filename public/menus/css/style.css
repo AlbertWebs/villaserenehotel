@@ -1,16 +1,9 @@
 /*------------------------------------------------------------------
-[Master Stylesheet]
-Theme : ESS Restaurant
-Author Name: Naveen Kumar Verma
-Description: Restaurant - Responsive theme and desgin
-Version: 1.0
-license: https://euclidesoftwaresolutions.com/
-Copyright 2021 ESS Authors
-*/
+
 @charset "UTF-8";
 
 /*==========================================================
-							Fonts 
+							Fonts
 ==========================================================*/
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400|Oswald:300,400,700&amp;display=swap');
 
@@ -27,7 +20,7 @@ Copyright 2021 ESS Authors
     - Bs modal css
     - border zigzap
     - forms
-    - 
+    -
 + Header
 	- Logo
 	- Navbar
@@ -48,7 +41,7 @@ Copyright 2021 ESS Authors
 	- gallery page
 	- story page
 	- news Page
-        - news-detail 
+        - news-detail
 	- Contact page
 + Kayframes animation
 
@@ -57,7 +50,7 @@ Copyright 2021 ESS Authors
 
 
 /*==========================================================
-							General 
+							General
 ==========================================================*/
 
 
@@ -70,7 +63,7 @@ Copyright 2021 ESS Authors
 body{
 	margin:0;
 	-ms-text-size-adjust: 100%;
-	
+
     font-family: 'Avenir Next LT Pro';
 	-webkit-text-size-adjust: 100%;
 	font-size: 16px;
@@ -100,7 +93,7 @@ a {
 	cursor:pointer;
 }
 a:hover{
-	color:#fe4e2b;
+	color:#a7a7a7;
 }
 a,li{
 	transition:0.5s ease all;
@@ -122,7 +115,7 @@ a:focus,button:focus,button:focus, input:focus, select:focus, textarea:focus{
 	overflow-y:hidden;
 }
 body::selection{
-	background: #fe4e2b;
+	background: #a7a7a7;
 }
 h1{
 	font-size: 3.125rem;
@@ -205,7 +198,7 @@ img {
 	color:#000000;
 }
 .primary{
-	color:#fe4e2b;
+	color:#a7a7a7;
 }
 .secondry{
 	color:#000000;
@@ -213,7 +206,7 @@ img {
 .text-gray{
 	color: #afb9bd;
 }
-.text-white{    
+.text-white{
 	color:#ffffff;
 }
 .text-sky{
@@ -230,7 +223,7 @@ img {
 	background-color:#000000;
 }
 .primary-bg{
-	background-color:#fe4e2b;
+	background-color:#a7a7a7;
 }
 .secondry-bg{
 	background-color:#000000;
@@ -260,31 +253,31 @@ img {
     outline: none !important;
 }
 .btn-primary {
-    background: #fe4e2b;
-    border-color: #fe4e2b;
+    background: #a7a7a7;
+    border-color: #a7a7a7;
 }
 .btn-primary:hover , .btn-primary:focus {
-    color: #fe4e2b;
+    color: #a7a7a7;
     background: #ffffff;
-    border-color: #fe4e2b;
+    border-color: #a7a7a7;
     box-shadow: inset 0 -50px 0 #ffffff !important;
 }
 .btn-outline {
     border-color: #ffffff;
 }
 .btn-outline:hover , .btn-outline:focus {
-    background: #fe4e2b;
+    background: #a7a7a7;
     border-color: #ffffff;
     color: #ffffff;
-    box-shadow: inset 0 -50px 0 #fe4e2b !important;
+    box-shadow: inset 0 -50px 0 #a7a7a7 !important;
 }
 .btn-black {
     background: #000000;
 }
 .btn-black:hover , .btn-black:focus {
-    color: #fe4e2b;
+    color: #a7a7a7;
     background: #ffffff;
-    border-color: #fe4e2b;
+    border-color: #a7a7a7;
     box-shadow: inset 0 -50px 0 #ffffff !important;
 }
 
@@ -337,7 +330,7 @@ img {
 .border-gray {
     border: 1px solid #e6eff3;
 }
-	
+
 /*--forms--*/
 .reservation-form {
     max-width: 981px;
@@ -361,7 +354,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-}   
+}
 .reservation-form .formrow {
     position: relative;
 }
@@ -374,7 +367,7 @@ input::-webkit-calendar-picker-indicator{
    left: 5px;
    width: 20px;
    height: 20px;
-   color: #fe4e2b;
+   color: #a7a7a7;
 }
 .reservation-form .form-control#date {
     background-image: url('../images/calender.png');
@@ -388,10 +381,10 @@ input::-webkit-calendar-picker-indicator{
     background-repeat: no-repeat;
     background-size: 23px;
   }
-  input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-    -webkit-appearance: none; 
-    margin: 0; 
+  input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 input[type=number] {
     -moz-appearance:textfield;
@@ -436,7 +429,7 @@ input[type=time]::-webkit-calendar-picker-indicator {
     top: 50%;
     transform: translate(0px, -50%);
     font-size: 16px;
-    color: #fe4e2b;
+    color: #a7a7a7;
     background-image: url(../images/dropdown.png);
     background-position: center;
     background-repeat: no-repeat;
@@ -477,7 +470,7 @@ form.keepup-form .formrow .input-group-append button.btn.btn-secondary {
 }
 form.keepup-form .formrow .input-group-append button.btn.btn-secondary:hover {
     transform: translate(10px, 0px);
-    color: #fe4e2b;
+    color: #a7a7a7;
 }
 .form-control::placeholder {
     font-size: 16px;
@@ -546,7 +539,7 @@ a#toTopBtn {
 	text-transform: uppercase;
 }
 .header-area .navbar-nav li a.nav-link.active {
-    color: #fe4e2b !important;
+    color: #a7a7a7 !important;
 }
 ul.dropdown-menu {
     display: block;
@@ -560,7 +553,7 @@ ul.dropdown-menu {
     transform: translate(0px, 0px);
     opacity: 1;
     visibility: visible;
-}   
+}
 /*--navbar--*/
 
 /*==========================================================
@@ -628,7 +621,7 @@ ul.dropdown-menu {
 }
 .footer .main-footer .footer-widget ul.widget-list li a:hover i {
     transform: rotate(90deg);
-    background: #fe4e2b;
+    background: #a7a7a7;
 }
 .footer .main-footer .footer-widget ul.widget-list li a:hover i::before {
     transform: rotate(-90deg);
@@ -637,7 +630,7 @@ ul.dropdown-menu {
     transition: .5s ease;
 }
 .footer .main-footer .footer-widget ul.widget-list li a:hover .details p {
-    color: #fe4e2b;
+    color: #a7a7a7;
 }
 .footer .main-footer .footer-widget ul.widget-list li a i::before {
     transform: rotate(-45deg);
@@ -778,13 +771,13 @@ ul.dropdown-menu {
 .galleryrow > .column {
     padding: 0 8px;
   }
-  
+
   .galleryrow:after {
     content: "";
     display: table;
     clear: both;
   }
-  
+
   .gallerycolumn {
     float: left;
     width: 25%;
@@ -967,8 +960,8 @@ ul.dropdown-menu {
     margin: 0 3.5px;
 }
 .Testimonial-block .carousel-indicators button.active {
-    border-color: #fe4e2b;
-    background: #fe4e2b;
+    border-color: #a7a7a7;
+    background: #a7a7a7;
 }
 .content-white.Testimonial-block .carousel-indicators button {
     border: 1px solid #ffffff;
@@ -1029,7 +1022,7 @@ ul.dropdown-menu {
     margin: 0 20px;
 }
 .tabs-bar .nav .nav-link.active , .tabs-bar .nav .nav-link:hover{
-    border-bottom: 1px solid #fe4e2b;
+    border-bottom: 1px solid #a7a7a7;
     color: #000000;
 }
 ul.menu-listing li .leftbar {
@@ -1108,7 +1101,7 @@ ul.menu-listing li {
 }
 .insta-box .overlay i {
     font-size: 40px;
-    color: #fe4e2b;
+    color: #a7a7a7;
 }
 .insta-box:hover .overlay {
     opacity: 1;
@@ -1184,7 +1177,7 @@ section.Reservation-bar {
 .contact-form form.formreply .form-control[type=number]::-webkit-inner-spin-button,
 .contact-form form.formreply .form-control[type=number]::-webkit-calendar-picker-indicator {
     display: none;
-    -webkit-appearance: none; 
+    -webkit-appearance: none;
 }
 .contact .footer .copyright-bar {
     background: #e7f0f3;
@@ -1472,7 +1465,7 @@ section.Reservation-bar {
     font-weight: 600;
 }
 .blogs-sidebar .sidebar-blogs-listing ul li a:hover h5 {
-    color: #fe4e2b;
+    color: #a7a7a7;
 }
 .blogs-sidebar .sidebar-blogs-listing ul li .date {
     margin: 0 0;

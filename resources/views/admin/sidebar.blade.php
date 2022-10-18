@@ -155,6 +155,27 @@
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link nav-toggle">
+                        <i class="material-icons">menu</i>
+                        <span class="title">Menu</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item">
+                            <a href="{{ route('admin.new.menu') }}" class="nav-link ">
+                                <span class="title">Add Menu</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.view.menu') }}" class="nav-link ">
+                                <span class="title">View Menu</span>
+                            </a>
+                        </li>
+
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link nav-toggle">
                         <i class="material-icons">group</i>
                         <span class="title">Staff(!)</span>
                         <span class="arrow"></span>

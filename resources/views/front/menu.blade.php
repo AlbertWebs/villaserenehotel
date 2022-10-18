@@ -21,5 +21,6 @@
 </div>
 <!-- Page Banner End -->
 
+<iframe width="100%" style="min-height:1000px" src="{{url('/')}}/menu-page" frameborder="0" allowfullscreen></iframe>
 
 @endsection

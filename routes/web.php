@@ -11,6 +11,7 @@ use App\Http\Controllers\PrivacyController;
 use App\Http\Controllers\TermController;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MenuController;
 use App\Http\Controllers\PaymentsController;
 use App\Http\Controllers\Auth\LoginController;
 
@@ -29,6 +30,8 @@ use App\Http\Controllers\Auth\LoginController;
 
 Route::get('/', [HomeController::class, 'index'])->name('front.home');
 Route::get('/menu', [HomeController::class, 'menu'])->name('front.menu');
+Route::get('/menu-page', [HomeController::class, 'menu_page'])->name('front.menu-page');
+
 Route::get('/contact-us', [HomeController::class, 'contact'])->name('front.contact');
 Route::get('/email', [HomeController::class, 'email'])->name('front.email');
 Route::get('/bookings', [HomeController::class, 'bookings'])->name('front.bookings');
@@ -98,6 +101,14 @@ Route::group(['prefix'=>'admin'], function(){
     Route::get('view-file-list', [FileController::class, 'index_list'])->name('admin.list.file')->middleware('is_admin');
     Route::get('delete-file/{id}', [FileController::class, 'destroy'])->name('admin.delete.file')->middleware('is_admin');
     Route::get('edit-file/{id}', [FileController::class, 'edit'])->name('admin.edit.file')->middleware('is_admin');
+
+    Route::get('new-menu', [MenuController::class, 'create'])->name('admin.new.menu')->middleware('is_admin');
+    Route::post('store-menu', [MenuController::class, 'store'])->name('admin.store.menu')->middleware('is_admin');
+    Route::post('update-menu/{id}', [MenuController::class, 'update'])->name('admin.update.menu')->middleware('is_admin');
+    Route::get('view-menu', [MenuController::class, 'index'])->name('admin.view.menu')->middleware('is_admin');
+    Route::get('view-menu-list', [MenuController::class, 'index_list'])->name('admin.list.menu')->middleware('is_admin');
+    Route::get('delete-menu/{id}', [MenuController::class, 'destroy'])->name('admin.delete.menu')->middleware('is_admin');
+    Route::get('edit-menu/{id}', [MenuController::class, 'edit'])->name('admin.edit.menu')->middleware('is_admin');
 });
 
 // Route::post('/make-payment','PaymentsController@payment');
